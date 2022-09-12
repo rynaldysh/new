@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/layoutBarang"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_136sdp"
+    android:layout_height="@dimen/_190sdp"
+    android:layout_marginVertical="@dimen/_5sdp"
+    android:layout_marginHorizontal="@dimen/_5sdp"
+    android:layout_marginStart="@dimen/_8sdp"
+    android:backgroundTint="@color/primary_color"
+    app:cardCornerRadius="@dimen/_10sdp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_color">
+
+        <ImageView
+            android:id="@+id/ivBarang"
+            android:layout_width="@dimen/_136sdp"
+            android:layout_height="@dimen/_95sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/beranda_ex_kostt"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="@dimen/_5sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_95sdp"
+        android:layout_marginBottom="@dimen/_3sdp">
+
+        <TextView
+            android:id="@+id/tvNamaBarang"
+            android:layout_marginVertical="@dimen/_3sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kost Barang"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:ellipsize="end"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:tint="@color/black"
+                android:src="@drawable/beranda_location"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:id="@+id/tvLokasiBarang"
+                android:layout_marginVertical="@dimen/_3sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kecamatan Depok"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:tint="#FFC107"
+                android:src="@drawable/beranda_star_rate"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:id="@+id/tvRateAverageKost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.5 (18)"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_3sdp">
+
+            <TextView
+                android:id="@+id/tvHargaBarang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp1.000.000"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
