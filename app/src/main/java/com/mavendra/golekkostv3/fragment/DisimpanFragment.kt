@@ -28,12 +28,6 @@ class DisimpanFragment : Fragment() {
     lateinit var myDb: MyDatabase
     lateinit var s :SharedPref
 
-    lateinit var ivDeleteSimpan: ImageView
-
-    var listJasa = ArrayList<Jasaangkut>()
-    lateinit var adapter: KeranjangAdapter
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

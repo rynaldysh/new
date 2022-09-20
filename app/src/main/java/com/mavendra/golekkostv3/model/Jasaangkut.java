@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
-@Entity(tableName = "jasa") // the name of tabel
+@Entity(tableName = "simpanjasa") // the name of tabel
 public class Jasaangkut implements Serializable {
 
     @PrimaryKey(autoGenerate = true)

@@ -27,7 +27,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/ivgambar"
+                    android:id="@+id/ivgambarJasaangkut"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_221sdp"
                     android:src="@drawable/beranda_ex_kostt" />

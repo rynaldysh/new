@@ -47,6 +47,16 @@
         <activity android:name=".activity.SuccesActivity" />
         <activity android:name=".activity.RiwayatBelanjaActivity" />
         <activity android:name=".activity.DetailTransferActivity" />
+        <activity android:name=".activity.KirimPemesananJasaActivity" />
+        <activity android:name=".activity.TambahAlamatPesanKostKontrakanActivity" />
+        <activity android:name=".activity.SuccesJasaActivity" />
+        <activity android:name=".activity.ListAlamatPesanJasaActivity" />
+        <activity android:name=".activity.KirimPemesananKostKontrakanActivity" />
+        <activity android:name=".activity.ListAlamatPesanKostKontrakanActivity" />
+        <activity android:name=".activity.SuccesKostKontrakanActivity" />
+        <activity android:name=".activity.TambahAlamatPesanJasaActivity" />
+        <activity android:name=".activity.RiwayatPesanJasaActivity" />
+        <activity android:name=".activity.RiwayatPesanKostkontrakanActivity" />
     </application>
 
 </manifest>

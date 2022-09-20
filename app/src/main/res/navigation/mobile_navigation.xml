@@ -21,7 +21,7 @@
         android:label="@string/profil"
         tools:layout="@layout/fragment_profil" />
     <fragment
-        android:id="@+id/disimpanFragment"
+        android:id="@+id/nav_disimpan"
         android:name="com.mavendra.golekkostv3.fragment.DisimpanFragment"
         android:label="DisimpanFragment"
         tools:layout="@layout/fragment_disimpan"/>

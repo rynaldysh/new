@@ -13,13 +13,13 @@ import com.google.gson.Gson
 import com.mavendra.golekkostv3.R
 import com.mavendra.golekkostv3.activity.DetailKostKontrakanActivity
 import com.mavendra.golekkostv3.app.Constants.KOSTKONTRAKAN_URL
-import com.mavendra.golekkostv3.model.KostKontrakan
+import com.mavendra.golekkostv3.model.Kostkontrakan
 import com.squareup.picasso.Picasso
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class KostKontrakanAdapter(var activity: Activity, var data:ArrayList<KostKontrakan>):RecyclerView.Adapter<KostKontrakanAdapter.Holder>(){
+class KostKontrakanAdapter(var activity: Activity, var data:ArrayList<Kostkontrakan>):RecyclerView.Adapter<KostKontrakanAdapter.Holder>(){
 
     class Holder(view: View):RecyclerView.ViewHolder(view){
         val tvName = view.findViewById<TextView>(R.id.tvNameKost)
@@ -55,7 +55,7 @@ class KostKontrakanAdapter(var activity: Activity, var data:ArrayList<KostKontra
 
         holder.layout.setOnClickListener {
             val kostKontrakan = Intent(activity, DetailKostKontrakanActivity::class.java)
-            val str = Gson().toJson(data[position], KostKontrakan::class.java)
+            val str = Gson().toJson(data[position], Kostkontrakan::class.java)
             kostKontrakan.putExtra("kostkontrakan", str)
             activity.startActivity(kostKontrakan)
         }

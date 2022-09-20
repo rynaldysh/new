@@ -17,6 +17,8 @@ import com.mavendra.golekkostv3.fragment.BerandaFragment
 import com.mavendra.golekkostv3.fragment.DisimpanFragment
 import com.mavendra.golekkostv3.fragment.KeranjangFragment
 import com.mavendra.golekkostv3.fragment.ProfilFragment
+import com.mavendra.golekkostv3.fragment.TabDisimpanFragment.DisimpanJasaFragment
+import com.mavendra.golekkostv3.fragment.TabDisimpanFragment.DisimpanKostKontrakanFragment
 import com.mavendra.golekkostv3.helper.SharedPref
 
 class MainActivity : AppCompatActivity() {
@@ -37,6 +39,8 @@ class MainActivity : AppCompatActivity() {
     private var statusLogin = false
 
     private var dariDetail :Boolean = false
+    private var dariDetailJasa :Boolean = false
+    private var dariDetailKostkontrakan :Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,11 +65,27 @@ class MainActivity : AppCompatActivity() {
          */
 
         LocalBroadcastManager.getInstance(this).registerReceiver(mMessage, IntentFilter("event:keranjang"))
+        LocalBroadcastManager.getInstance(this).registerReceiver(mMessagejasa, IntentFilter("event:simpanjasa"))
+        LocalBroadcastManager.getInstance(this).registerReceiver(mMessageekostkontrakan, IntentFilter("event:simpankostkontrakan"))
     }
 
     val mMessage: BroadcastReceiver = object  :BroadcastReceiver(){
         override fun onReceive(p0: Context?, p1: Intent?) {
             dariDetail = true
+        }
+
+    }
+
+    val mMessagejasa: BroadcastReceiver = object  :BroadcastReceiver(){
+        override fun onReceive(p0: Context?, p1: Intent?) {
+            dariDetailJasa = true
+        }
+
+    }
+
+    val mMessageekostkontrakan: BroadcastReceiver = object  :BroadcastReceiver(){
+        override fun onReceive(p0: Context?, p1: Intent?) {
+            dariDetailKostkontrakan = true
         }
 
     }
@@ -124,6 +144,18 @@ class MainActivity : AppCompatActivity() {
             dariDetail = false
             callFragment(1, fragmenKeranjang)
         }
+
+        if (dariDetailJasa){
+            dariDetailJasa = false
+            callFragment(2, fragmentDisimpan)
+        }
+
+        if (dariDetailKostkontrakan){
+            dariDetailKostkontrakan = false
+            callFragment(2, fragmentDisimpan)
+        }
+
         super.onResume()
     }
+
 }

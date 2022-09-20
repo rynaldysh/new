@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.gson.Gson
 import com.mavendra.golekkostv3.R
-import com.mavendra.golekkostv3.app.Constants.BARANG_URL
+import com.mavendra.golekkostv3.app.Constants.barang_url
 import com.mavendra.golekkostv3.helper.Helper
 import com.mavendra.golekkostv3.model.Barang
 import com.mavendra.golekkostv3.room.MyDatabase
@@ -19,7 +19,6 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_detail_barang.*
-import kotlinx.android.synthetic.main.activity_detail_kostkontrakan.ivgambar
 import kotlinx.android.synthetic.main.toolbar_custom_bottom_barang_detail.*
 import kotlinx.android.synthetic.main.toolbar_custom_keranjang_detail.*
 
@@ -31,14 +30,9 @@ class DetailBarangActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_barang)
 
-
         getInfo()
-        /*mainButton()*/
-        checkKeranjang()
-
         mainButton()
-
-
+        checkKeranjang()
 
     }
 
@@ -98,7 +92,6 @@ class DetailBarangActivity : AppCompatActivity() {
         }
     }
 
-
     private fun getInfo() {
         val data = intent.getStringExtra("barang")
         barang = Gson().fromJson<Barang>(data, Barang::class.java)
@@ -111,12 +104,12 @@ class DetailBarangActivity : AppCompatActivity() {
         tvDeskripsiBarang.text = barang.deskripsi
 
 
-        val image =  BARANG_URL + barang.image
+        val image =  barang_url + barang.image
         Picasso.get()
             .load(image)
             .placeholder(R.drawable.beranda_ex_kostt)
             .error(R.drawable.beranda_ex_kostt)
-            .into(ivgambar)
+            .into(ivgambarBarang)
 
         Helper().setToolbar(this, toolbarKeranjangAtas, barang.name)
     }

@@ -44,23 +44,6 @@
 
                 </LinearLayout>
 
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/_25sdp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerInParent="true"
-                    android:layout_marginEnd="@dimen/_15sdp">
-
-                    <ImageView
-                        android:id="@+id/ivDeleteSimpan"
-                        android:layout_width="@dimen/_25sdp"
-                        android:layout_height="@dimen/_25sdp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/button_delete" />
-
-                </RelativeLayout>
-
             </RelativeLayout>
 
 

@@ -1,6 +1,8 @@
 package com.mavendra.golekkostv3.app
 
 import com.mavendra.golekkostv3.model.CheckOut
+import com.mavendra.golekkostv3.model.CheckoutPesanJasa
+import com.mavendra.golekkostv3.model.CheckoutPesanKostKontrakan
 import com.mavendra.golekkostv3.model.ResponModel
 import com.mavendra.golekkostv3.model.rajaongkir.ResponOngkir
 import retrofit2.Call
@@ -14,7 +16,7 @@ interface ApiService {
         @Field("name") name:String,
         @Field("phone") phone:String,
         @Field("email") email:String,
-        @Field("password") password:String
+        @Field("password") password:String,
     ): Call<ResponModel>
 
     @FormUrlEncoded
@@ -77,4 +79,23 @@ interface ApiService {
         @Path("id") id: Int
     ): Call<ResponModel>
 
+    @POST("pesanjasa")
+    fun pesanjasa(
+        @Body data:CheckoutPesanJasa,
+    ): Call<ResponModel>
+
+    @GET("pesanjasa/user/{id}")
+    fun getPesanjasa(
+        @Path("id") id: Int
+    ): Call<ResponModel>
+
+    @POST("pesankostkontrakan")
+    fun pesankostkontrakan(
+        @Body data:CheckoutPesanKostKontrakan
+    ): Call<ResponModel>
+
+    @GET("pesankostkontrakan/user/{id}")
+    fun getKostkontrakan(
+        @Path("id") id: Int
+    ): Call<ResponModel>
 }

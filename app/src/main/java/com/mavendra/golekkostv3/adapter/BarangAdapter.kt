@@ -43,7 +43,7 @@ class BarangAdapter(var activity: Activity, var data:ArrayList<Barang>):Recycler
         holder.tvName.text = data[position].name
         holder.tvHarga.text = NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(Integer.valueOf(data[position].harga))
         holder.tvLokasi.text = data[position].lokasi
-        val image =  Constants.BARANG_URL + data[position].image
+        val image =  Constants.barang_url + data[position].image
         Picasso.get()
             .load(image)
             .placeholder(R.drawable.beranda_ex_kostt)

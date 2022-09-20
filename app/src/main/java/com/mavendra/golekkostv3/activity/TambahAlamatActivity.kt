@@ -238,9 +238,9 @@ class TambahAlamatActivity : AppCompatActivity() {
                         arrayString.add(prov.nama)
                     }
 
-                    val adapter = ArrayAdapter<Any>(this@TambahAlamatActivity, R.layout.item_spinner, arrayString.toTypedArray())
-                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                    spnKecamatan.adapter = adapter
+                    val jasaAdapter = ArrayAdapter<Any>(this@TambahAlamatActivity, R.layout.item_spinner, arrayString.toTypedArray())
+                    jasaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                    spnKecamatan.jasaAdapter = jasaAdapter
 
                     spnKecamatan.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
                         override fun onNothingSelected(p0: AdapterView<*>?) {

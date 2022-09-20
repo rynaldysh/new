@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mavendra.golekkostv3.R
@@ -18,7 +17,7 @@ import com.mavendra.golekkostv3.app.ApiConfig
 import com.mavendra.golekkostv3.helper.SharedPref
 import com.mavendra.golekkostv3.model.Barang
 import com.mavendra.golekkostv3.model.Jasaangkut
-import com.mavendra.golekkostv3.model.KostKontrakan
+import com.mavendra.golekkostv3.model.Kostkontrakan
 import com.mavendra.golekkostv3.model.ResponModel
 import retrofit2.Call
 import retrofit2.Callback
@@ -33,8 +32,10 @@ class BerandaFragment : Fragment() {
     lateinit var rvJasaAngkut: RecyclerView
     lateinit var rvBarangJualan: RecyclerView
     lateinit var s :SharedPref
-    lateinit var tvUsername :TextView
-    lateinit var tvInisial :TextView
+
+    private var listBarang :ArrayList<Barang> = ArrayList()
+    private var listKostKontrakan :ArrayList<Kostkontrakan> = ArrayList()
+    private var listJasaangkut :ArrayList<Jasaangkut> = ArrayList()
 
 
     override fun onCreateView(
@@ -48,7 +49,6 @@ class BerandaFragment : Fragment() {
         initKostKontrakan(view)
         initJasaAngkut(view)
         initBarangJualan(view)
-        /*initToolbarProfil(view)*/
 
         getKostKontrakan()
         getJasaAngkut()
@@ -59,14 +59,6 @@ class BerandaFragment : Fragment() {
 
         return view
     }
-
-
-
-    /*private fun initToolbarProfil(view: View){
-        tvUsername = view.findViewById(R.id.tv_username)
-        tvInisial = view.findViewById(R.id.tvInisial)
-
-    }*/
 
     private fun prefBeranda(){
         if (s.getUser() == null){
@@ -79,7 +71,6 @@ class BerandaFragment : Fragment() {
 
     }
 
-    private var listBarang :ArrayList<Barang> = ArrayList()
     fun getBarang(){
         ApiConfig.instanceRetrofit.getBarang().enqueue(object :
             Callback<ResponModel> {
@@ -98,7 +89,6 @@ class BerandaFragment : Fragment() {
 
     }
 
-    private var listKostKontrakan :ArrayList<KostKontrakan> = ArrayList()
     fun getKostKontrakan(){
         ApiConfig.instanceRetrofit.getKostKontrakan().enqueue(object :
             Callback<ResponModel> {
@@ -117,7 +107,6 @@ class BerandaFragment : Fragment() {
 
     }
 
-    private var listJasaangkut :ArrayList<Jasaangkut> = ArrayList()
     fun getJasaAngkut(){
         ApiConfig.instanceRetrofit.getJasaAngkut().enqueue(object :
             Callback<ResponModel> {

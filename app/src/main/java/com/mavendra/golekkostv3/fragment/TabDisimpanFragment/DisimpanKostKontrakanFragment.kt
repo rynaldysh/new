@@ -11,12 +11,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mavendra.golekkostv3.R
+import com.mavendra.golekkostv3.activity.KirimPemesananKostKontrakanActivity
 import com.mavendra.golekkostv3.activity.MasukActivity
-import com.mavendra.golekkostv3.activity.PengirimanActivity
-import com.mavendra.golekkostv3.adapter.KeranjangAdapter
-import com.mavendra.golekkostv3.helper.Helper
+import com.mavendra.golekkostv3.adapter.SimpanKostKontrakanAdapter
 import com.mavendra.golekkostv3.helper.SharedPref
-import com.mavendra.golekkostv3.model.Barang
+import com.mavendra.golekkostv3.model.Kostkontrakan
 import com.mavendra.golekkostv3.room.MyDatabase
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -39,89 +38,82 @@ class DisimpanKostKontrakanFragment : Fragment() {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_disimpan_kost_kontrakan, container, false)
 
-        /*init(view)  */
         myDb = MyDatabase.getInstance(requireActivity())!!
         s = SharedPref(requireActivity())
 
-        /*displayBarang()
-        mainButton()*/
+        init(view)
+        displayKostKontrakan()
+        mainButton()
 
         return view
     }
 
-    lateinit var adapter: KeranjangAdapter
-    var listBarang = ArrayList<Barang>()
-    /*private fun displayBarang(){
-        *//*val myDb = MyDatabase.getInstance(requireActivity())*//*
-        listBarang = myDb.daoKeranjang().getAll() as ArrayList
-        val layoutManagerBarang = LinearLayoutManager(activity)
-        layoutManagerBarang.orientation = LinearLayoutManager.VERTICAL
+    lateinit var kostkontrakanAdapter: SimpanKostKontrakanAdapter
+    var listKostKontrakan = ArrayList<Kostkontrakan>()
+    private fun displayKostKontrakan(){
+        /*val myDb = MyDatabase.getInstance(requireActivity())*/
+        listKostKontrakan = myDb.daoSimpanKostKontrakan().getAll() as ArrayList
+        val layoutManagerlistKostKontrakan = LinearLayoutManager(activity)
+        layoutManagerlistKostKontrakan.orientation = LinearLayoutManager.VERTICAL
 
 
-        adapter = KeranjangAdapter(requireActivity(), listBarang, object  :KeranjangAdapter.Listeners{
+        kostkontrakanAdapter = SimpanKostKontrakanAdapter(requireActivity(), listKostKontrakan, object  : SimpanKostKontrakanAdapter.Listeners{
             override fun onUpdate() {
-                hitungTotal()
+                centangTotal()
             }
 
             override fun onDelete(position: Int) {
-                listBarang.removeAt(position)
-                adapter.notifyDataSetChanged()
-                hitungTotal()
+                listKostKontrakan.removeAt(position)
+                kostkontrakanAdapter.notifyDataSetChanged()
+                centangTotal()
             }
 
         })
 
-        rvBarangJualan.adapter = adapter
-        rvBarangJualan.layoutManager = layoutManagerBarang
-    }*/
+        rvDisimpanKostKontrakan.adapter = kostkontrakanAdapter
+        rvDisimpanKostKontrakan.layoutManager = layoutManagerlistKostKontrakan
+    }
 
-    var totalHarga = 0
-    /*fun hitungTotal(){
+    private fun centangTotal(){
 
-        val listBarang = myDb.daoKeranjang().getAll() as ArrayList
+        val listKostKontrakan = myDb.daoSimpanKostKontrakan().getAll() as ArrayList
 
-        totalHarga = 0
         var isSelectedAll = true
-        for (barang in listBarang){
-            if (barang.selected){
-                val harga = Integer.valueOf(barang.harga)
-                totalHarga += (harga * barang.jumlah)
-            } else {
-                isSelectedAll = false
-            }
+
+        for (kostkontrakan in listKostKontrakan){
+            isSelectedAll = kostkontrakan.selected
         }
 
-        cbAll.isChecked = isSelectedAll
-        tvTotalHarga.text = Helper().gantiRupiah(totalHarga)
-    }*/
+        cbAllDisimpanKostKontrakan.isChecked = isSelectedAll
+    }
 
+    private fun mainButton(){
 
-    /*private fun mainButton(){
-        ivDeleteKeranjang.setOnClickListener {
-            val listDelete = ArrayList<Barang>()
-            for (b in listBarang){
+        ivDeleteDisimpanKostKontrakan.setOnClickListener {
+            val listDelete = ArrayList<Kostkontrakan>()
+            for (b in listKostKontrakan){
                 if (b.selected) listDelete.add(b)
             }
 
             delete(listDelete)
         }
 
-        btBayar.setOnClickListener {
+        btPesanKostKontrakanBawah.setOnClickListener {
 
             if (s.getStatusLogin()){
 
-                var isThereBarang = false
+                var isThereDisimpanKostKontrakan = false
 
-                for (b in listBarang){
-                    if (b.selected) isThereBarang = true
+                for (b in listKostKontrakan){
+                    if (b.selected) isThereDisimpanKostKontrakan = true
                 }
 
-                if (isThereBarang){
-                    val intent = Intent(requireActivity(), PengirimanActivity::class.java)
-                    intent.putExtra("extra", "" + totalHarga)
-                        startActivity(intent)
+                if (isThereDisimpanKostKontrakan){
+                    val intent = Intent(requireActivity(), KirimPemesananKostKontrakanActivity::class.java)
+                    intent.putExtra("extrakostkontrakan", "")
+                    startActivity(intent)
                 } else {
-                    Toast.makeText(requireContext(), "Tidak ada produk yang terpilih", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Tidak ada kost atau kontrakan yang terpilih", Toast.LENGTH_SHORT).show()
                 }
 
             } else {
@@ -129,47 +121,45 @@ class DisimpanKostKontrakanFragment : Fragment() {
             }
         }
 
-        cbAll.setOnClickListener {
-            for(i in listBarang.indices){
-                val barang = listBarang[i]
-                barang.selected = cbAll.isChecked
+        cbAllDisimpanKostKontrakan.setOnClickListener {
+            for(i in listKostKontrakan.indices){
+                val jasa = listKostKontrakan[i]
+                jasa.selected = cbAllDisimpanKostKontrakan.isChecked
 
-                listBarang[i] = barang
+                listKostKontrakan[i] = jasa
             }
 
-            adapter.notifyDataSetChanged()
+            kostkontrakanAdapter.notifyDataSetChanged()
 
         }
-    }*/
+    }
 
-    /*fun delete(data: ArrayList<Barang>){
-        CompositeDisposable().add(Observable.fromCallable { myDb.daoKeranjang().delete(data) }
+    fun delete(data: ArrayList<Kostkontrakan>){
+        CompositeDisposable().add(Observable.fromCallable { myDb.daoSimpanKostKontrakan().delete(data) }
             .subscribeOn(Schedulers.computation())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
-                listBarang.clear()
-                listBarang.addAll(myDb.daoKeranjang().getAll() as ArrayList)
-                adapter.notifyDataSetChanged()
+                listKostKontrakan.clear()
+                listKostKontrakan.addAll(myDb.daoSimpanKostKontrakan().getAll() as ArrayList)
+                kostkontrakanAdapter.notifyDataSetChanged()
             })
-    }*/
+    }
 
-    lateinit var ivDeleteKeranjang: ImageView
-    lateinit var rvBarangJualan: RecyclerView
-    lateinit var tvTotalHarga: TextView
-    lateinit var btBayar: Button
-    lateinit var cbAll: CheckBox
+    lateinit var rvDisimpanKostKontrakan: RecyclerView
+    lateinit var ivDeleteDisimpanKostKontrakan: ImageView
+    lateinit var cbAllDisimpanKostKontrakan: CheckBox
+    lateinit var btPesanKostKontrakanBawah: Button
 
-    /*private fun init(view: View) {
-        ivDeleteKeranjang = view.findViewById(R.id.ivDeleteKeranjang)
-        rvBarangJualan = view.findViewById(R.id.rvKostKontrakan)
-        tvTotalHarga = view.findViewById(R.id.tvTotalHarga)
-        btBayar = view.findViewById(R.id.btBayar)
-        cbAll = view.findViewById(R.id.cbAll)
-    }*/
+    private fun init(view: View) {
+        ivDeleteDisimpanKostKontrakan = view.findViewById(R.id.ivDeleteDisimpanKostKontrakan)
+        rvDisimpanKostKontrakan = view.findViewById(R.id.rvListDisimpanKostKontrakan)
+        cbAllDisimpanKostKontrakan = view.findViewById(R.id.cbAllDisimpanKostKontrakan)
+        btPesanKostKontrakanBawah = view.findViewById(R.id.btPesanKostKontrakanBawah)
+    }
 
-    /*override fun onResume() {
-        displayBarang()
-        hitungTotal()
+    override fun onResume() {
+        displayKostKontrakan()
+        centangTotal()
         super.onResume()
-    }*/
+    }
 }

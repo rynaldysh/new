@@ -51,7 +51,7 @@ class BarangTransaksiAdapter(var data:ArrayList<DetailTransaksi>):RecyclerView.A
         holder.tvHargaTotal.text = Helper().gantiRupiah(a.total_harga)
         holder.tvItem.text = a.total_item.toString() + " Item"
 
-        val image =  Constants.BARANG_URL + b.image
+        val image =  Constants.barang_url + b.image
         Picasso.get()
             .load(image)
             .placeholder(R.drawable.beranda_ex_kostt)

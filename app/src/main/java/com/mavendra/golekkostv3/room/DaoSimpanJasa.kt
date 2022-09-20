@@ -19,15 +19,15 @@ interface DaoSimpanJasa {
     @Update
     fun update(data: Jasaangkut): Int
 
-    @Query("SELECT * from jasa ORDER BY id ASC")
+    @Query("SELECT * from simpanjasa ORDER BY id ASC")
     fun getAll(): List<Jasaangkut>
 
-    @Query("SELECT * FROM jasa WHERE id = :id LIMIT 1")
+    @Query("SELECT * FROM simpanjasa WHERE id = :id LIMIT 1")
     fun getJasaangkut(id: Int): Jasaangkut
 
-    @Query("DELETE FROM jasa WHERE id = :id")
+    @Query("DELETE FROM simpanjasa WHERE id = :id")
     fun deleteById(id: String): Int
 
-    @Query("DELETE FROM jasa")
+    @Query("DELETE FROM simpanjasa")
     fun deleteAll(): Int
 }
