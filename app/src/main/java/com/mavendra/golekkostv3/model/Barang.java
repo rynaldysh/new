@@ -4,7 +4,10 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 
 @Entity(tableName = "keranjang") // the name of tabel
 public class Barang implements Serializable {
@@ -14,6 +17,7 @@ public class Barang implements Serializable {
     public int idTb;
 
     public int id;
+    public String user_id;
     public String name;
     public String nama_pemilik;
     public String harga;

@@ -56,7 +56,7 @@ class RiwayatPesanJasaActivity : AppCompatActivity() {
         rvRiwayatPesanJasa.adapter = RiwayatPesanJasaAdapter(pesanjasas, object :RiwayatPesanJasaAdapter.Listeners{
             override fun onClicked(data: PesanJasa) {
                 val json = Gson().toJson(data, PesanJasa::class.java)
-                val intent = Intent(this@RiwayatPesanJasaActivity, DetailTransferActivity::class.java)
+                val intent = Intent(this@RiwayatPesanJasaActivity, DetailPesanJasaActivity::class.java)
                 intent.putExtra("transaksipesanjasa", json)
                 startActivity(intent)
 

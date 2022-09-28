@@ -29,19 +29,15 @@ class Helper {
         activity.supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }
 
+    fun setToolbarSecond(activity: Activity, toolbarr: Toolbar, title: String) {
+        (activity as AppCompatActivity).setSupportActionBar(toolbarr)
+        activity.supportActionBar!!.title = title
+    }
+
     fun convertDate(date: String, newFormat: String, oldFormat: String = "yyyy-MM-dd kk:mm:ss") :String{
         val dateFormat = SimpleDateFormat(oldFormat)
         val convert = dateFormat.parse(date)
         dateFormat.applyPattern(newFormat)
         return dateFormat.format(convert)
-    }
-
-    fun String?.getInitial(): String {
-        if (this.isNullOrEmpty()) return ""
-        val array = this.split(" ")
-        if (array.isEmpty()) return this
-        var inisial = array[0].substring(0, 1)
-        if (array.size > 1) inisial += array[1].substring(0, 1)
-        return inisial.uppercase()
     }
 }

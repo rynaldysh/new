@@ -64,14 +64,17 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    app:cardCornerRadius="@dimen/_5sdp">
+                    android:layout_marginHorizontal="@dimen/_1sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:backgroundTint="@color/white"
+                    app:cardElevation="3dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:padding="@dimen/_5sdp">
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_10sdp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -107,14 +110,20 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    app:cardCornerRadius="@dimen/_5sdp">
+                    android:layout_marginHorizontal="1dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="2dp"
+                    android:backgroundTint="@color/white"
+                    app:cardElevation="3dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:padding="@dimen/_5sdp">
+                        android:padding="@dimen/_10sdp"
+                        app:cardElevation="3dp"
+                        android:paddingHorizontal="@dimen/_100sdp"
+                        android:paddingVertical="@dimen/_10sdp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -233,15 +242,27 @@
                     android:id="@+id/llBawah"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:background="@color/white"
                     android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btBayarDetailTransfer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:background="@drawable/tombol_bayar_transaksi"
+                        android:text="Bayar"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_12ssp"/>
 
                     <Button
                         android:id="@+id/btBatalDetailTransfer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
                         android:background="@drawable/tombol_batal_transaksi"
                         android:text="Batalkan Transfer"
                         android:textColor="@color/white"

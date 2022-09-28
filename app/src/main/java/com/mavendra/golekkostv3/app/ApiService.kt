@@ -5,6 +5,7 @@ import com.mavendra.golekkostv3.model.CheckoutPesanJasa
 import com.mavendra.golekkostv3.model.CheckoutPesanKostKontrakan
 import com.mavendra.golekkostv3.model.ResponModel
 import com.mavendra.golekkostv3.model.rajaongkir.ResponOngkir
+import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -43,6 +44,22 @@ interface ApiService {
     fun getBarang(
     ): Call<ResponModel>
 
+    @FormUrlEncoded
+    @POST("barang/uploadbarang")
+    fun uploadbarang(
+        @Field("name") name:String,
+        @Field("harga") harga:String,
+        @Field("lokasi") lokasi:String,
+        @Field("deskripsi") deskripsi:String,
+    ): Call<ResponModel>
+
+    @Multipart
+    @POST("barang/uploadbaranggambar/{id}")
+    fun uploadBarangFoto(
+        @Path("id") id: Int,
+        @Part image: MultipartBody.Part
+    ): Call<ResponModel>
+
     @GET("province")
     fun getProvinsi(
         @Header("key") key:String
@@ -79,6 +96,13 @@ interface ApiService {
         @Path("id") id: Int
     ): Call<ResponModel>
 
+    @Multipart
+    @POST("checkout/upload/{id}")
+    fun uploadBuktiTransfer(
+        @Path("id") id: Int,
+        @Part image: MultipartBody.Part
+    ): Call<ResponModel>
+
     @POST("pesanjasa")
     fun pesanjasa(
         @Body data:CheckoutPesanJasa,
@@ -89,13 +113,23 @@ interface ApiService {
         @Path("id") id: Int
     ): Call<ResponModel>
 
+    @POST("pesanjasa/batal/{id}")
+    fun batalPesanJasa(
+        @Path("id") id: Int
+    ): Call<ResponModel>
+
     @POST("pesankostkontrakan")
     fun pesankostkontrakan(
         @Body data:CheckoutPesanKostKontrakan
     ): Call<ResponModel>
 
     @GET("pesankostkontrakan/user/{id}")
-    fun getKostkontrakan(
+    fun getPesanKostkontrakan(
+        @Path("id") id: Int
+    ): Call<ResponModel>
+
+    @POST("pesankostkontrakan/batal/{id}")
+    fun batalPesankostkontrakan(
         @Path("id") id: Int
     ): Call<ResponModel>
 }

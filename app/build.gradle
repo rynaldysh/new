@@ -70,7 +70,7 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 
-    implementation 'com.github.TistoW:MyHelper:1.1.29'
+    implementation 'com.github.TistoW:MyHelper:1.1.6'
 
     //scalabel size
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
@@ -95,4 +95,7 @@ dependencies {
 
     //sweet alert
     implementation 'com.github.thomper:sweet-alert-dialog:1.4.0'
+    /*
+    implementation 'compile \'cn.pedant.sweetalert:library:1.3\''*/
+
 }

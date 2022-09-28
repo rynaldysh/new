@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.*
 import com.mavendra.golekkostv3.R
 import com.mavendra.golekkostv3.helper.Helper
-import com.mavendra.golekkostv3.model.AlamatPesanJasa
 import com.mavendra.golekkostv3.model.AlamatPesanKostKontrakan
 import com.mavendra.golekkostv3.room.MyDatabase
 import io.reactivex.Observable

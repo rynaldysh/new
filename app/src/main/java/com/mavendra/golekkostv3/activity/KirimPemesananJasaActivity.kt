@@ -115,7 +115,7 @@ class KirimPemesananJasaActivity : AppCompatActivity() {
                     intent.putExtra("bokingjasa", jsPesanJasa)
 
                     startActivity(intent)
-                    Toast.makeText(this@KirimPemesananJasaActivity, "Berhasil registrasi, silahkan masuk ", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@KirimPemesananJasaActivity, "Berhasil memesan jasa ", Toast.LENGTH_SHORT).show()
 
                 } else {
                     error(respon.message)

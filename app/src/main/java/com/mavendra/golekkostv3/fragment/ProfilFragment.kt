@@ -9,12 +9,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RelativeLayout
 import android.widget.TextView
-import com.inyongtisto.myhelper.extension.getInitial
 import com.mavendra.golekkostv3.R
-import com.mavendra.golekkostv3.activity.LoginActivity
-import com.mavendra.golekkostv3.activity.MasukActivity
-import com.mavendra.golekkostv3.activity.RiwayatBelanjaActivity
+import com.mavendra.golekkostv3.activity.*
 import com.mavendra.golekkostv3.helper.SharedPref
+import kotlinx.android.synthetic.main.fragment_profil.*
 
 /**
  * A simple [Fragment] subclass.
@@ -28,6 +26,9 @@ class ProfilFragment : Fragment() {
     lateinit var tvPhone :TextView
     lateinit var tvInisial :TextView
     lateinit var rlRiwayat :RelativeLayout
+    lateinit var rlRiwayatJasa :RelativeLayout
+    lateinit var rlRiwayatKostkontrakan :RelativeLayout
+    lateinit var rlBarang :RelativeLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,6 +55,16 @@ class ProfilFragment : Fragment() {
         rlRiwayat.setOnClickListener {
             startActivity(Intent(requireActivity(), RiwayatBelanjaActivity::class.java))
         }
+        rlRiwayatJasa.setOnClickListener {
+            startActivity(Intent(requireActivity(), RiwayatPesanJasaActivity::class.java))
+        }
+        rlRiwayatKostkontrakan.setOnClickListener {
+            startActivity(Intent(requireActivity(), RiwayatPesanKostkontrakanActivity::class.java))
+        }
+        rlBarang.setOnClickListener {
+            startActivity(Intent(requireActivity(), JualBarangActivity::class.java))
+        }
+
     }
 
     fun init(view: View) {
@@ -63,6 +74,9 @@ class ProfilFragment : Fragment() {
         tvPhone = view.findViewById(R.id.tv_phone)
         tvInisial = view.findViewById(R.id.tvProfil)
         rlRiwayat = view.findViewById(R.id.rlRiwayat)
+        rlRiwayatJasa = view.findViewById(R.id.rlRiwayatJasa)
+        rlRiwayatKostkontrakan = view.findViewById(R.id.rlRiwayatKostkontrakan)
+        rlBarang = view.findViewById(R.id.rlBarang)
     }
 
     private fun setData() {
@@ -80,14 +94,14 @@ class ProfilFragment : Fragment() {
         tvInisial.text = user.name.getInitial()
     }
 
-    /*private fun String?.getInitial(): String {
+    private fun String?.getInitial(): String {
         if (this.isNullOrEmpty()) return ""
         val array = this.split(" ")
         if (array.isEmpty()) return this
         var inisial = array[0].substring(0, 1)
         if (array.size > 1) inisial += array[1].substring(0, 1)
         return inisial.uppercase()
-    }*/
+    }
 
 
 

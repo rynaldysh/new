@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView
-    android:id="@+id/layoutRiwayatPesanKostKontrakan"
+    android:id="@+id/layoutRiwayatPesanKostkontrakan"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                 android:layout_alignParentStart="true">
 
                 <TextView
-                    android:id="@+id/tvNamaRiwayatPesanKostKontrakan"
+                    android:id="@+id/tvNamaRiwayatPesanKostkontrakan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nama Jasa"
@@ -45,7 +45,7 @@
                 android:layout_alignParentBottom="true">
 
                 <TextView
-                    android:id="@+id/tvTanggalRiwayatPesanKostKontrakan"
+                    android:id="@+id/tvTanggalRiwayatPesanKostkontrakan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tanggal"
@@ -74,7 +74,7 @@
                 android:layout_centerInParent="true">
 
                 <TextView
-                    android:id="@+id/tvStatusRiwayatPesanKostKontrakan"
+                    android:id="@+id/tvStatusRiwayatPesanKostkontrakan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Selesai"
@@ -91,7 +91,7 @@
                 android:layout_alignParentEnd="true">
 
                 <TextView
-                    android:id="@+id/tvDetailRiwayatPesanKostKontrakan"
+                    android:id="@+id/tvDetailRiwayatPesanKostkontrakan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Detail"

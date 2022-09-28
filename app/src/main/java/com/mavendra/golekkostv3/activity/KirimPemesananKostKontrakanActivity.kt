@@ -90,7 +90,7 @@ class KirimPemesananKostKontrakanActivity : AppCompatActivity() {
             pesanKostKontrakan.name = a.name
             pesanKostKontrakan.tanggal = a.tanggal
             pesanKostKontrakan.phone = a.phone
-            pesanKostKontrakan.detail_lokasi = tvAlamatAlamatDisimpanKostKontrakan.text.toString()
+            pesanKostKontrakan.detail_lokasi = a.alamat
             pesanKostKontrakan.kostkontrakans = kostkontrakans
 
 
@@ -109,7 +109,7 @@ class KirimPemesananKostKontrakanActivity : AppCompatActivity() {
 
                     val jsPesanKostKontrakan = Gson().toJson(pesanKostKontrakan, CheckoutPesanKostKontrakan::class.java)
 
-                    val intent = Intent(this@KirimPemesananKostKontrakanActivity, SuccesKostKontrakanActivity::class.java)
+                    val intent = Intent(this@KirimPemesananKostKontrakanActivity, SuccesKostkontrakanActivity::class.java)
                     intent.putExtra("bokingkostkontrakan", jsPesanKostKontrakan)
 
                     startActivity(intent)

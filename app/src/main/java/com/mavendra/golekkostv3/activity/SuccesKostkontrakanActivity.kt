@@ -7,19 +7,20 @@ import com.google.gson.Gson
 import com.mavendra.golekkostv3.MainActivity
 import com.mavendra.golekkostv3.R
 import com.mavendra.golekkostv3.helper.Helper
+import com.mavendra.golekkostv3.model.CheckoutPesanJasa
 import com.mavendra.golekkostv3.model.CheckoutPesanKostKontrakan
 import com.mavendra.golekkostv3.room.MyDatabase
 import kotlinx.android.synthetic.main.activity_succes_kost_kontrakan.*
 import kotlinx.android.synthetic.main.toolbar_biasa.*
 
-class SuccesKostKontrakanActivity : AppCompatActivity() {
+class SuccesKostkontrakanActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_succes_kost_kontrakan)
 
-        Helper().setToolbar(this, toolbarBiasa, "Detail Transfer")
+        Helper().setToolbar(this, toolbarBiasa, "Sukses Booking")
 
         setValue()
         mainButton()
@@ -35,11 +36,11 @@ class SuccesKostKontrakanActivity : AppCompatActivity() {
 
         val jsCheckoutPesanKostkontrakan = intent.getStringExtra("bokingkostkontrakan")
 
-        val checkoutPesanKostKontrakan = Gson().fromJson(jsCheckoutPesanKostkontrakan, CheckoutPesanKostKontrakan::class.java)
+        val checkoutPesanKostkontrakan = Gson().fromJson(jsCheckoutPesanKostkontrakan, CheckoutPesanKostKontrakan::class.java)
 
         val myDb = MyDatabase.getInstance(this)!!
 
-        for(kostkontrakan in checkoutPesanKostKontrakan.kostkontrakans){
+        for(kostkontrakan in checkoutPesanKostkontrakan.kostkontrakans){
             myDb.daoSimpanKostKontrakan().deleteById(kostkontrakan.id)
         }
     }

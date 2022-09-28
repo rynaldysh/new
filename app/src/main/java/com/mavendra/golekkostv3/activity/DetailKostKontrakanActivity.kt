@@ -38,7 +38,7 @@ class DetailKostKontrakanActivity : AppCompatActivity() {
     }
 
     private fun mainButton() {
-        ivSaveKostKontrakan.setOnClickListener {
+        ivSaveKostkontrakan.setOnClickListener {
             val mydDb: MyDatabase = MyDatabase.getInstance(this)!!
             val data = mydDb.daoSimpanKostKontrakan().getKostkostkontrakan(kostkontrakan.id)
             if (data == null){

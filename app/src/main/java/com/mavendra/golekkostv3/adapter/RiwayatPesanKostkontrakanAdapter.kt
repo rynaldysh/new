@@ -10,24 +10,25 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.mavendra.golekkostv3.R
 import com.mavendra.golekkostv3.helper.Helper
+import com.mavendra.golekkostv3.model.PesanJasa
 import com.mavendra.golekkostv3.model.PesanKostkontrakan
 import kotlin.collections.ArrayList
 
-class RiwayatPesanKostKontrakanAdapter(var data:ArrayList<PesanKostkontrakan>, var listener: Listeners):RecyclerView.Adapter<RiwayatPesanKostKontrakanAdapter.Holder>(){
+class RiwayatPesanKostkontrakanAdapter(var data:ArrayList<PesanKostkontrakan>, var listener: Listeners):RecyclerView.Adapter<RiwayatPesanKostkontrakanAdapter.Holder>(){
 
     class Holder(view: View):RecyclerView.ViewHolder(view){
-        val tvName = view.findViewById<TextView>(R.id.tvNamaRiwayatPesanKostKontrakan)
-        val tvTanggal = view.findViewById<TextView>(R.id.tvTanggalRiwayatPesanKostKontrakan)
-        val tvStatus = view.findViewById<TextView>(R.id.tvStatusRiwayatPesanKostKontrakan)
+        val tvName = view.findViewById<TextView>(R.id.tvNamaRiwayatPesanKostkontrakan)
+        val tvTanggal = view.findViewById<TextView>(R.id.tvTanggalRiwayatPesanKostkontrakan)
+        val tvStatus = view.findViewById<TextView>(R.id.tvStatusRiwayatPesanKostkontrakan)
         /*val tvDetail = view.findViewById<TextView>(R.id.tvDetailRiwayat)*/
-        val layout = view.findViewById<CardView>(R.id.layoutRiwayatPesanKostKontrakan)
+        val layout = view.findViewById<CardView>(R.id.layoutRiwayatPesanKostkontrakan)
 
     }
 
     lateinit var context: Context
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         context = parent.context
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_riwayat_pesan_kost_kontrakan, parent, false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_riwayat_pesan_kostkontrakan, parent, false)
         return Holder(view)
     }
 

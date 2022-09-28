@@ -8,279 +8,132 @@
     tools:context=".MainActivity">
 
     <include
-        layout="@layout/toolbar_custom_bottom_jasa_detail"
+        layout="@layout/toolbar_biasa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <LinearLayout
-        android:id="@+id/ll_total"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_20sdp"
-        android:orientation="vertical"
-        android:layout_marginTop="@dimen/_20sdp"
-        app:layout_constraintTop_toBottomOf="@id/tvLogin">
-
-        <LinearLayout
-            android:id="@+id/llNamaProduk"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:background="@null">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Nama Produk">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etNamaProduk"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:background="@color/white"
-                        android:inputType="textEmailAddress"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#CACACA" />
-
-        <LinearLayout
-            android:id="@+id/llAlamatProduk"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:background="@null">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Alamat Produk">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:background="@color/white"
-                        android:inputType="textEmailAddress"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#CACACA" />
-
-        <LinearLayout
-            android:id="@+id/llEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:background="@null">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Nomor Telfon">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etNoTelfonProduk"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:background="@color/white"
-                        android:inputType="textEmailAddress"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#CACACA" />
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="vertical">
 
             <RelativeLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_20sdp">
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_catatan">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_alignParentStart="true">
-
-                    <CheckBox
-                        android:id="@+id/idJnt"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="JnT" />
-
-                    <CheckBox
-                        android:id="@+id/idJNE"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:text="JNE" />
-
-                    <CheckBox
-                        android:id="@+id/idGoSend"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:text="GoSend" />
-
-                </LinearLayout>
+                <EditText
+                    android:id="@+id/etNamaBarang"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_31sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@null"
+                    android:hint="Nama barang yang akan dijual"
+                    android:inputType="textPersonName"
+                    android:textSize="@dimen/_14ssp" />
 
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_20sdp">
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_catatan">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_alignParentEnd="true">
-
-                    <CheckBox
-                        android:id="@+id/idSicepat"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="SiCepat" />
-
-                    <CheckBox
-                        android:id="@+id/idAnteraja"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:text="AnterAJa" />
-
-                    <CheckBox
-                        android:id="@+id/idGrabExpress"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:text="GrabExpress" />
-
-                </LinearLayout>
+                <EditText
+                    android:id="@+id/etHargaBarang"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_31sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@null"
+                    android:hint="Harga Barang"
+                    android:inputType="phone"
+                    android:textSize="@dimen/_14ssp" />
 
             </RelativeLayout>
 
-        </LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_100sdp">
-
-            <androidx.cardview.widget.CardView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical"
-                android:layout_marginTop="@dimen/_30sdp"
-                android:layout_centerInParent="true"
-                android:backgroundTint="@color/black">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_catatan">
 
-                <TextView
-                    android:id="@+id/tvProfil"
-                    android:background="@color/primary_color"
+                <EditText
+                    android:id="@+id/etAlamatAsalPesanJasa"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Upload gambar produk"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@null"
+                    android:hint="Alamat pemilik barang"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:textSize="@dimen/_14ssp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_catatan">
+
+                <EditText
+                    android:id="@+id/etDeskripsiBarang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@null"
+                    android:hint="Deskripsi barang"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:textSize="@dimen/_14ssp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_250sdp"
+                android:layout_marginTop="@dimen/_5sdp">
+
+                <Button
+                    android:id="@+id/btUploadDataBarang"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginHorizontal="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_50sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_alignParentBottom="true"
+                    android:text="Upload Data Barang"
                     android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_20ssp"
-                    android:gravity="center"/>
+                    android:textSize="@dimen/_14ssp"
+                    android:textColor="@color/white"
+                    android:textAllCaps="true"
+                    android:background="@drawable/tombol_bulat"/>
 
-                <ImageView
-                    android:id="@+id/ivProfil"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical"/>
+            </RelativeLayout>
 
-            </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/btKirim"
-                android:layout_width="@dimen/_200sdp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginBottom="@dimen/_20sdp"
-                android:background="@drawable/tombol_isian"
-                android:text="Kirim"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
-    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 
 

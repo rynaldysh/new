@@ -46,8 +46,8 @@ class RegisterActivity : AppCompatActivity() {
             etName.error = "Kolom nama tidak boleh kosong"
             etName.requestFocus()
             return
-        } else if (phone.isEmpty() || password.length > 11){
-            etTelfon.error = "Kolom nama tidak boleh kosong"
+        } else if (phone.isEmpty()){
+            etTelfon.error = "Kolom nomor telfon tidak boleh kosong"
             etTelfon.requestFocus()
             return
         } else if (email.isEmpty()){

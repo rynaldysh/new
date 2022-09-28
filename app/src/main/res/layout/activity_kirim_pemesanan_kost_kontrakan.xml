@@ -99,32 +99,55 @@
 
             </androidx.cardview.widget.CardView>
 
-            <Button
-                android:id="@+id/btTambahAlamatDisimpanKostKontrakan"
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:background="@drawable/tombol_pembayaran_white"
-                android:text="Tambah Alamat"
-                android:textAllCaps="false"
-                android:textStyle="bold" />
-
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_390sdp"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_30sdp">
 
-                <Button
-                    android:id="@+id/btBayarDisimpanKostKontrakan"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/tombol_bulat"
-                    android:text="Bayar"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white" />
+                    android:layout_alignParentTop="true">
 
-            </LinearLayout>
+                    <Button
+                        android:id="@+id/btTambahAlamatDisimpanKostKontrakan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/tombol_pembayaran_white"
+                        android:text="Tambah Alamat"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:layout_marginHorizontal="@dimen/_50sdp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true">
+
+                    <Button
+                        android:id="@+id/btBayarDisimpanKostKontrakan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/tombol_bulat"
+                        android:text="Pesan"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_13ssp"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:layout_marginBottom="@dimen/_20sdp"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
 
         </LinearLayout>
 

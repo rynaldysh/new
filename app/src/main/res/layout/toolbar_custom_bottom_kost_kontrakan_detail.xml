@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarDetailBawahKostKontrakan"
+        android:id="@+id/toolbarDetailBawahKostkontrakan"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
         android:background="@color/white"
@@ -18,7 +18,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/ivSaveKostKontrakan"
+                android:id="@+id/ivSaveKostkontrakan"
                 android:layout_width="@dimen/_35sdp"
                 android:layout_height="match_parent"
                 android:src="@drawable/nav_ic_disimpan"

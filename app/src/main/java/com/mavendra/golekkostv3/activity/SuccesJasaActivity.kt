@@ -10,6 +10,7 @@ import com.mavendra.golekkostv3.helper.Helper
 import com.mavendra.golekkostv3.model.CheckoutPesanJasa
 import com.mavendra.golekkostv3.room.MyDatabase
 import kotlinx.android.synthetic.main.activity_succes_jasa.*
+import kotlinx.android.synthetic.main.activity_succes_kost_kontrakan.*
 import kotlinx.android.synthetic.main.toolbar_biasa.*
 
 class SuccesJasaActivity : AppCompatActivity() {
@@ -19,7 +20,7 @@ class SuccesJasaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_succes_jasa)
 
-        Helper().setToolbar(this, toolbarBiasa, "Detail Transfer")
+        Helper().setToolbar(this, toolbarBiasa, "Sukses Pemesanan")
 
         setValue()
         mainButton()

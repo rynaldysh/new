@@ -45,16 +45,7 @@ class ListAlamatActivity : AppCompatActivity() {
                     val alamatActive = myDb.daoAlamat().getByStatus(true)!!
                     alamatActive.isSelected = false
                     updateActive(alamatActive, data)
-
-                    /*for (alamat in arrayList){
-                        alamat.isSelected = false
-                        update(alamat)
-                    }*/
                 }
-
-                /*data.isSelected = true
-                update(data)
-                onBackPressed()*/
             }
         })
         rvAlamat.layoutManager = layoutManager

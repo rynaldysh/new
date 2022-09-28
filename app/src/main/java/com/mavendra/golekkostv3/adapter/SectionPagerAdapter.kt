@@ -10,8 +10,8 @@ class SectionPagerAdapter(fm:FragmentManager) : FragmentPagerAdapter(fm) {
 
     override fun getPageTitle(position: Int): CharSequence? {
         return when(position){
-            0 -> "Jasa Angkut"
-            1 -> "Kost atau Kontrakan"
+            0 -> "Kost atau Kontrakan"
+            1 -> "Jasa Angkut"
             else -> ""
         }
     }
@@ -24,16 +24,15 @@ class SectionPagerAdapter(fm:FragmentManager) : FragmentPagerAdapter(fm) {
         var fragment : Fragment
         return  when(position){
             0 -> {
-                fragment = DisimpanJasaFragment()
-                return  fragment
-            }
-
-            1 -> {
                 fragment = DisimpanKostKontrakanFragment()
                 return  fragment
             }
-            else -> {
+            1 -> {
                 fragment = DisimpanJasaFragment()
+                return  fragment
+            }
+            else -> {
+                fragment = DisimpanKostKontrakanFragment()
                 return fragment
             }
         }

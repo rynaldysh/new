@@ -53,10 +53,14 @@
         <activity android:name=".activity.ListAlamatPesanJasaActivity" />
         <activity android:name=".activity.KirimPemesananKostKontrakanActivity" />
         <activity android:name=".activity.ListAlamatPesanKostKontrakanActivity" />
-        <activity android:name=".activity.SuccesKostKontrakanActivity" />
         <activity android:name=".activity.TambahAlamatPesanJasaActivity" />
         <activity android:name=".activity.RiwayatPesanJasaActivity" />
+        <activity android:name=".activity.SuccesKostkontrakanActivity" />
         <activity android:name=".activity.RiwayatPesanKostkontrakanActivity" />
+        <activity android:name=".activity.DetailPesanJasaActivity" />
+        <activity android:name=".activity.DetailPesanKostkontrakanActivity" />
+        <activity android:name=".activity.JualBarangActivity" />
+        <activity android:name=".activity.UploadFotoBarangActivity" />
     </application>
 
 </manifest>

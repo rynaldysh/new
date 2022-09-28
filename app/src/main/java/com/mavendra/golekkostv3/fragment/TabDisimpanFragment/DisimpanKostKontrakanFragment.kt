@@ -123,10 +123,10 @@ class DisimpanKostKontrakanFragment : Fragment() {
 
         cbAllDisimpanKostKontrakan.setOnClickListener {
             for(i in listKostKontrakan.indices){
-                val jasa = listKostKontrakan[i]
-                jasa.selected = cbAllDisimpanKostKontrakan.isChecked
+                val kostkontrakan = listKostKontrakan[i]
+                kostkontrakan.selected = cbAllDisimpanKostKontrakan.isChecked
 
-                listKostKontrakan[i] = jasa
+                listKostKontrakan[i] = kostkontrakan
             }
 
             kostkontrakanAdapter.notifyDataSetChanged()

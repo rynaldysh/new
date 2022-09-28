@@ -31,7 +31,7 @@ class SimpanKostKontrakanAdapter(var activity: Activity, var data:ArrayList<Kost
         val tvLokasi = view.findViewById<TextView>(R.id.tvLokasiItemDisimpanKostKontrakan)
         /*val tvMayoritas = view.findViewById<TextView>(R.id.tvMayoritas)*/
         val ivItem = view.findViewById<ImageView>(R.id.ivItemDisimpanKostKontrakan)
-        val layout = view.findViewById<CardView>(R.id.layoutDisimpanJasa)
+        val layout = view.findViewById<CardView>(R.id.layoutDisimpanKostKontrakan)
 
         val ivDelete = view.findViewById<ImageView>(R.id.ivDeleteItemDisimpanKostKontrakan)
         val checkBox = view.findViewById<CheckBox>(R.id.checkBoxItemDisimpanKostKontrakan)

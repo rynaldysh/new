@@ -18,6 +18,7 @@
     <color name="bg_garis_pembayaran">#CFCFCF</color>
     <color name="font_color_done">#68FF15</color>
     <color name="batal_transaksi">#CA3F3F</color>
+    <color name="bayar_transaksi">#2085FF</color>
     <color name="menunggu">#FFB700</color>
     <color name="selesai">#68FF15</color>
     <color name="batal">#CA3F3F</color>

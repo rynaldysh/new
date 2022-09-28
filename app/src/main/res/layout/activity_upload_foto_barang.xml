@@ -20,39 +20,16 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_300sdp"
-                android:src="@drawable/end_jasaangkut"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/_5sdp"
-                android:layout_marginBottom="@dimen/_100sdp"
-                android:textAlignment="center"
-                android:text="Pemesanan Kost atau Kontrakan Telah Berhasil!"
-                android:textSize="@dimen/_20ssp"
-                android:textColor="@color/black"
-                android:textStyle="bold"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true">
 
             <Button
-                android:id="@+id/btCekStatusJasa"
+                android:id="@+id/btUploadGambarBarang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/tombol_bulat"
-                android:text="Cek Status Pemesanan Kost atau Kontrakan "
+                android:text="Upload Foto Untuk Melengkapi Data"
                 android:textColor="@color/white"
                 android:textStyle="bold"/>
 

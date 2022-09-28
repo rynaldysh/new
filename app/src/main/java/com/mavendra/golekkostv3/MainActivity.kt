@@ -145,13 +145,13 @@ class MainActivity : AppCompatActivity() {
             callFragment(1, fragmenKeranjang)
         }
 
-        if (dariDetailJasa){
-            dariDetailJasa = false
+        if (dariDetailKostkontrakan){
+            dariDetailKostkontrakan = false
             callFragment(2, fragmentDisimpan)
         }
 
-        if (dariDetailKostkontrakan){
-            dariDetailKostkontrakan = false
+        if (dariDetailJasa){
+            dariDetailJasa = false
             callFragment(2, fragmentDisimpan)
         }
 
