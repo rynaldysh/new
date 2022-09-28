@@ -26,7 +26,7 @@ class JualBarangActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_jual_barang)
 
-        Helper().setToolbar(this, toolbarBiasa, "Riwayat Belanja")
+        Helper().setToolbar(this, toolbarBiasa, "Input Daftar Barang Jual")
 
         mainButton()
 
@@ -39,7 +39,6 @@ class JualBarangActivity : BaseActivity() {
     }
 
     fun uploadData(){
-        val user = SharedPref(this).getUser()!!
         val name = etNamaBarang.text.toString().trim()
         val harga = etHargaBarang.text.toString().trim()
         val lokasi = etAlamatAsalPesanJasa.text.toString().trim()
@@ -63,9 +62,6 @@ class JualBarangActivity : BaseActivity() {
             return
         }
 
-        val barang = Barang()
-        barang.user_id = "" + user.id
-
         ApiConfig.instanceRetrofit.uploadbarang(name, harga, lokasi, deskripsi).enqueue(object :
             Callback<ResponModel> {
 
@@ -87,6 +83,7 @@ class JualBarangActivity : BaseActivity() {
                     val intent = Intent(this@JualBarangActivity, UploadFotoBarangActivity::class.java)
                     intent.putExtra("barangpush", jsBarang)
                     startActivity(intent)
+                    Toast.makeText(this@JualBarangActivity, "Selesaikan dengan upload gambar barang ", Toast.LENGTH_SHORT).show()
                     finish()
 
                 } else {

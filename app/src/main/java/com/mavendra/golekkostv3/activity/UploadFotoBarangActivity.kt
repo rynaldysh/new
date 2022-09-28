@@ -111,6 +111,8 @@ class UploadFotoBarangActivity : BaseActivity() {
 
     private fun upload(file: File){
 
+        val json = intent.getStringExtra("barangpush")
+        barang = Gson().fromJson(json, Barang::class.java)
         val fileImage = file.toMultipartBody()
 
         progress.show()

@@ -17,7 +17,6 @@ public class Barang implements Serializable {
     public int idTb;
 
     public int id;
-    public String user_id;
     public String name;
     public String nama_pemilik;
     public String harga;
