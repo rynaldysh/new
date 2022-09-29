@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <RelativeLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.core.widget.NestedScrollView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="@dimen/_519sdp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -57,7 +57,7 @@
                     android:id="@+id/rvDetailPesanJasa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     tools:itemCount="1"
                     tools:listitem="@layout/item_barang_detail_transfer" />
 
@@ -151,34 +151,34 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <RelativeLayout
-                    android:id="@+id/llBawahPesanJasa"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_140sdp"
-                    android:background="@color/white"
-                    android:padding="@dimen/_8sdp">
 
-                    <Button
-                        android:id="@+id/btBatalDetailPesanJasa"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:background="@drawable/tombol_batal_transaksi"
-                        android:text="Batalkan Pemesanan"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_12ssp"
-                        android:textStyle="bold" />
-
-                </RelativeLayout>
 
             </LinearLayout>
 
-        </androidx.core.widget.NestedScrollView>
+            <RelativeLayout
+                android:id="@+id/llBawahPesanJasa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white"
+                android:padding="@dimen/_8sdp">
+
+                <Button
+                    android:id="@+id/btBatalDetailPesanJasa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/tombol_batal_transaksi"
+                    android:text="Batalkan Pemesanan"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
 
 
+            </RelativeLayout>
 
-    </RelativeLayout>
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

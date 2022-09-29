@@ -7,7 +7,8 @@ import androidx.room.RoomDatabase
 import com.mavendra.golekkostv3.model.*
 
 
-@Database(entities = [Barang::class, Alamat::class, Jasaangkut::class, AlamatPesanJasa::class, AlamatPesanKostKontrakan::class, Kostkontrakan::class] /* List model Ex:NoteModel */, version = 1)
+@Database(entities = [Barang::class, Alamat::class, Jasaangkut::class, AlamatPesanJasa::class,
+                    AlamatPesanKostKontrakan::class, Kostkontrakan::class, ] /* List model Ex:NoteModel */, version = 1)
 abstract class MyDatabase : RoomDatabase() {
     abstract fun daoKeranjang(): DaoKeranjang // DaoNote
     abstract fun daoAlamat(): DaoAlamat // DaoNote
@@ -15,6 +16,7 @@ abstract class MyDatabase : RoomDatabase() {
     abstract fun daoSimpanKostKontrakan(): DaoSimpanKostKontrakan // DaoNote
     abstract fun daoAlamatPesanJasa(): DaoAlamatPesanJasa // DaoNote
     abstract fun daoAlamatPesanKostKontrakan(): DaoAlamatPesanKostKontrakan // DaoNote
+    abstract fun daoInputBarang(): DaoInputBarang // DaoNote
 
 
     companion object {

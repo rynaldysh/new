@@ -31,7 +31,7 @@ class KostkontrakanPesanAdapter(var data:ArrayList<DetailPesanKostkontrakan>):Re
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_detail_pesan_jasa, parent, false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_detail_pesan_kostkontrakan, parent, false)
         return Holder(view)
     }
 
@@ -62,6 +62,6 @@ class KostkontrakanPesanAdapter(var data:ArrayList<DetailPesanKostkontrakan>):Re
     }
 
     interface  Listeners{
-        fun onClicked(data: DetailPesanJasa)
+        fun onClicked(data: DetailPesanKostkontrakan)
     }
 }

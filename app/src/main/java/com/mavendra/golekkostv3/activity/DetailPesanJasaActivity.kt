@@ -102,14 +102,14 @@ class DetailPesanJasaActivity : AppCompatActivity() {
     fun setData(pesanjasa: PesanJasa) {
 
         val newFormat = "dd MMMM yyyy, kk:mm:ss"
-        tvTanggalDetailPesanKostkontrakan.text = Helper().convertDate(pesanjasa.created_att, newFormat)
+        tvTanggalDetailPesanJasa.text = Helper().convertDate(pesanjasa.created_att, newFormat)
         /*tvTanggalDetailTransfer.text = transaksi.created_att*/
 
-        tvStatusDetailPesanKostkontrakan.text = pesanjasa.status
-        tvPemesanPesanKostkontrakan.text = pesanjasa.name + " - " + pesanjasa.phone
+        tvStatusDetailPesanJasa.text = pesanjasa.status
+        tvPemesanPesanJasa.text = pesanjasa.name + " - " + pesanjasa.phone
         tvAlamatAsalPemesanDetailPesanJasa.text = pesanjasa.detail_lokasi_asal + "(" + pesanjasa.type_asal + ")"
         tvAlamatTujuanPemesanDetailPesanJasa.text = pesanjasa.detail_lokasi_tujuan + "(" + pesanjasa.type_tujuan + ")"
-        tvKodePemesanDetailPesanKostkontrakan.text = pesanjasa.kode_pesan_jasa
+        tvKodePemesanDetailPesanJasa.text = pesanjasa.kode_pesan_jasa
 
         if(pesanjasa.status != "MENUNGGU") llBawahPesanJasa.visibility = View.GONE
 
@@ -117,7 +117,7 @@ class DetailPesanJasaActivity : AppCompatActivity() {
         if (pesanjasa.status == "SELESAI") color = getColor(R.color.selesai)
         else if (pesanjasa.status == "BATAL") color = getColor(R.color.batal)
 
-        tvStatusDetailPesanKostkontrakan.setTextColor(color)
+        tvStatusDetailPesanJasa.setTextColor(color)
     }
 
     fun displayDetailTransfer(pesanjasas: ArrayList<DetailPesanJasa>) {

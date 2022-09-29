@@ -28,6 +28,7 @@ class BarangAdapter(var activity: Activity, var data:ArrayList<Barang>):Recycler
         val ivBarang = view.findViewById<ImageView>(R.id.ivBarang)
         val layout = view.findViewById<CardView>(R.id.layoutBarang)
 
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -37,6 +38,7 @@ class BarangAdapter(var activity: Activity, var data:ArrayList<Barang>):Recycler
 
     override fun getItemCount(): Int {
         return data.size
+
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
