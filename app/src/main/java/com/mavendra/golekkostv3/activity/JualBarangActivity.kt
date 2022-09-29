@@ -20,7 +20,7 @@ import retrofit2.Response
 
 class JualBarangActivity : BaseActivity() {
 
-    var barang = Barang()
+    val barang = Barang()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +39,7 @@ class JualBarangActivity : BaseActivity() {
     }
 
     fun uploadData(){
+        val user = SharedPref(this).getUser()!!
         val name = etNamaBarang.text.toString().trim()
         val harga = etHargaBarang.text.toString().trim()
         val lokasi = etAlamatAsalPesanJasa.text.toString().trim()
@@ -79,12 +80,14 @@ class JualBarangActivity : BaseActivity() {
                 val respon = response.body()!!
                 if (respon.success == 1){
 
-                    val jsBarang = Gson().toJson(barang, Barang::class.java)
+                    val jsBarang= Gson().toJson(respon.barang, Barang::class.java)
+
                     val intent = Intent(this@JualBarangActivity, UploadFotoBarangActivity::class.java)
                     intent.putExtra("barangpush", jsBarang)
+
                     startActivity(intent)
-                    Toast.makeText(this@JualBarangActivity, "Selesaikan dengan upload gambar barang ", Toast.LENGTH_SHORT).show()
-                    finish()
+                    Toast.makeText(this@JualBarangActivity, "Berhasil memesan jasa ", Toast.LENGTH_SHORT).show()
+
 
                 } else {
                     error(respon.message)

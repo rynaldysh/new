@@ -3,42 +3,36 @@ package com.mavendra.golekkostv3.activity
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.drjacky.imagepicker.ImagePicker
 import com.google.gson.Gson
 import com.inyongtisto.myhelper.base.BaseActivity
 import com.inyongtisto.myhelper.extension.showErrorDialog
 import com.inyongtisto.myhelper.extension.showSuccessDialog
-import com.inyongtisto.myhelper.extension.toGone
 import com.inyongtisto.myhelper.extension.toMultipartBody
 import com.mavendra.golekkostv3.R
-import com.mavendra.golekkostv3.adapter.BarangTransaksiAdapter
 import com.mavendra.golekkostv3.app.ApiConfig
 import com.mavendra.golekkostv3.helper.Helper
-import com.mavendra.golekkostv3.model.Barang
-import com.mavendra.golekkostv3.model.DetailTransaksi
-import com.mavendra.golekkostv3.model.ResponModel
-import com.mavendra.golekkostv3.model.Transaksi
+import com.mavendra.golekkostv3.model.*
+import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail_transfer.*
+import kotlinx.android.synthetic.main.activity_jual_barang.*
+import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.activity_upload_foto_barang.*
+import kotlinx.android.synthetic.main.toolbar_biasa.*
+import kotlinx.android.synthetic.main.view_upload_bukti.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog
-import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_detail_transfer.btBayarDetailTransfer
-import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_upload_foto_barang.*
-import kotlinx.android.synthetic.main.toolbar_beranda.*
-import kotlinx.android.synthetic.main.toolbar_biasa.*
 import java.io.File
-
 
 class UploadFotoBarangActivity : BaseActivity() {
 
@@ -48,12 +42,13 @@ class UploadFotoBarangActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upload_foto_barang)
 
-        Helper().setToolbar(this, toolbarBiasa, "Upload Foto")
+        Helper().setToolbar(this, toolbarBiasa, "Riwayat Belanja")
 
         val json = intent.getStringExtra("barangpush")
         barang = Gson().fromJson(json, Barang::class.java)
 
         mainButton()
+
     }
 
     fun mainButton(){
@@ -72,7 +67,6 @@ class UploadFotoBarangActivity : BaseActivity() {
     }
 
     var alertDialog : AlertDialog? = null
-
     @SuppressLint("inflateParams")
     private fun dialodUpload(file: File){
 
@@ -111,8 +105,6 @@ class UploadFotoBarangActivity : BaseActivity() {
 
     private fun upload(file: File){
 
-        val json = intent.getStringExtra("barangpush")
-        barang = Gson().fromJson(json, Barang::class.java)
         val fileImage = file.toMultipartBody()
 
         progress.show()
@@ -125,15 +117,15 @@ class UploadFotoBarangActivity : BaseActivity() {
             override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
                 progress.dismiss()
                 if(response.isSuccessful){
-                        if (response.body()!!.success == 1){
-                            showSuccessDialog("berhasil"){
-                                alertDialog!!.dismiss()
-                                onBackPressed()
-                            }
-
-                        } else {
-                            showErrorDialog(response.body()!!.message)
+                    if (response.body()!!.success == 1){
+                        showSuccessDialog("Data produk sudah lengkap, terimakasih!"){
+                            alertDialog!!.dismiss()
+                            finish()
                         }
+
+                    } else {
+                        showErrorDialog(response.body()!!.message)
+                    }
 
                 } else {
                     showErrorDialog(response.message())
@@ -144,16 +136,10 @@ class UploadFotoBarangActivity : BaseActivity() {
         })
     }
 
-    fun error(pesan: String){
-        SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE)
-            .setTitleText("Maaf")
-            .setContentText(pesan)
-            .show()
-    }
-
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return super.onSupportNavigateUp()
     }
+
 
 }
