@@ -63,7 +63,7 @@ class JualBarangActivity : BaseActivity() {
             return
         }
 
-        ApiConfig.instanceRetrofit.uploadbarang(name, harga, lokasi, deskripsi).enqueue(object :
+        ApiConfig.instanceRetrofit.uploadbarang(user_id = user.id, name, harga, lokasi, deskripsi).enqueue(object :
             Callback<ResponModel> {
 
             override fun onFailure(call: Call<ResponModel>, t: Throwable) {

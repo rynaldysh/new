@@ -14,6 +14,7 @@ import com.mavendra.golekkostv3.R
 import com.mavendra.golekkostv3.activity.DetailBarangActivity
 import com.mavendra.golekkostv3.app.Constants
 import com.mavendra.golekkostv3.model.Barang
+import com.mavendra.golekkostv3.model.CheckOut
 import com.squareup.picasso.Picasso
 import java.text.NumberFormat
 import java.util.*

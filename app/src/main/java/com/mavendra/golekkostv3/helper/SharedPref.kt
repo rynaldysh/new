@@ -12,6 +12,7 @@ class SharedPref (val activity: Activity){
     val nama = "nama"
     val phone = "phone"
     val email = "email"
+    val id = "id"
 
     val user = "user"
 

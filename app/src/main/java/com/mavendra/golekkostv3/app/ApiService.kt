@@ -1,9 +1,6 @@
 package com.mavendra.golekkostv3.app
 
-import com.mavendra.golekkostv3.model.CheckOut
-import com.mavendra.golekkostv3.model.CheckoutPesanJasa
-import com.mavendra.golekkostv3.model.CheckoutPesanKostKontrakan
-import com.mavendra.golekkostv3.model.ResponModel
+import com.mavendra.golekkostv3.model.*
 import com.mavendra.golekkostv3.model.rajaongkir.ResponOngkir
 import okhttp3.MultipartBody
 import retrofit2.Call
@@ -47,6 +44,7 @@ interface ApiService {
     @FormUrlEncoded
     @POST("barang/uploadbarang")
     fun uploadbarang(
+        @Field("user_id") user_id: Int,
         @Field("name") name:String,
         @Field("harga") harga:String,
         @Field("lokasi") lokasi:String,

@@ -8,7 +8,7 @@ import com.mavendra.golekkostv3.model.*
 
 
 @Database(entities = [Barang::class, Alamat::class, Jasaangkut::class, AlamatPesanJasa::class,
-                    AlamatPesanKostKontrakan::class, Kostkontrakan::class, ] /* List model Ex:NoteModel */, version = 1)
+                    AlamatPesanKostKontrakan::class, Kostkontrakan::class] /* List model Ex:NoteModel */, version = 1)
 abstract class MyDatabase : RoomDatabase() {
     abstract fun daoKeranjang(): DaoKeranjang // DaoNote
     abstract fun daoAlamat(): DaoAlamat // DaoNote
@@ -16,7 +16,6 @@ abstract class MyDatabase : RoomDatabase() {
     abstract fun daoSimpanKostKontrakan(): DaoSimpanKostKontrakan // DaoNote
     abstract fun daoAlamatPesanJasa(): DaoAlamatPesanJasa // DaoNote
     abstract fun daoAlamatPesanKostKontrakan(): DaoAlamatPesanKostKontrakan // DaoNote
-    abstract fun daoInputBarang(): DaoInputBarang // DaoNote
 
 
     companion object {
@@ -27,7 +26,7 @@ abstract class MyDatabase : RoomDatabase() {
                 synchronized(MyDatabase::class) {
                     INSTANCE = Room.databaseBuilder(
                         context.applicationContext,
-                        MyDatabase::class.java, "coba19" // Database Name
+                        MyDatabase::class.java, "coba21" // Database Name
                     ).allowMainThreadQueries().build()
                 }
             }

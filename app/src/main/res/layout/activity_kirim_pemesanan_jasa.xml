@@ -144,7 +144,8 @@
                         android:textSize="@dimen/_13ssp"
                         android:textAllCaps="true"
                         android:textColor="@color/white"
-                        android:layout_marginBottom="@dimen/_20sdp"/>
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:visibility="gone"/>
 
                 </LinearLayout>
 

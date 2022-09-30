@@ -14,6 +14,7 @@ import com.mavendra.golekkostv3.helper.SharedPref
 import com.mavendra.golekkostv3.model.*
 import com.mavendra.golekkostv3.room.MyDatabase
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog
+import kotlinx.android.synthetic.main.activity_kirim_pemesanan_jasa.*
 import kotlinx.android.synthetic.main.activity_kirim_pemesanan_kost_kontrakan.*
 import kotlinx.android.synthetic.main.activity_pengiriman.*
 import kotlinx.android.synthetic.main.toolbar_biasa.*
@@ -53,6 +54,15 @@ class KirimPemesananKostKontrakanActivity : AppCompatActivity() {
             cvAlamatDisimpanKostKontrakan.visibility = View.GONE
             tvKosongDisimpanKostKontrakan.visibility = View.VISIBLE
             btTambahAlamatDisimpanKostKontrakan.text = "Tambah Alamat"
+        }
+    }
+
+    fun buttonPesan(){
+        if (myDb.daoAlamatPesanJasa().getByStatus(true) != null){
+            btBayarDisimpanKostKontrakan.visibility = View.VISIBLE
+
+        } else {
+            btBayarDisimpanKostKontrakan.visibility = View.GONE
         }
     }
 
@@ -145,6 +155,7 @@ class KirimPemesananKostKontrakanActivity : AppCompatActivity() {
 
     override fun onResume() {
         checkAlamat()
+        buttonPesan()
         super.onResume()
     }
 }

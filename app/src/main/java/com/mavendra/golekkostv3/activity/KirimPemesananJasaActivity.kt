@@ -55,16 +55,25 @@ class KirimPemesananJasaActivity : AppCompatActivity() {
         }
     }
 
+    fun buttonPesan(){
+        if (myDb.daoAlamatPesanJasa().getByStatus(true) != null){
+            btBayarDisimpanJasa.visibility = View.VISIBLE
+
+        } else {
+            btBayarDisimpanJasa.visibility = View.GONE
+        }
+    }
+
     private fun mainButton() {
         btTambahAlamatDisimpanJasa.setOnClickListener {
             startActivity(Intent(this, ListAlamatPesanJasaActivity::class.java))
         }
         btBayarDisimpanJasa.setOnClickListener {
-            bayar()
+            pesan()
         }
     }
 
-    private fun bayar(){
+    private fun pesan(){
         val user = SharedPref(this).getUser()!!
         val a = myDb.daoAlamatPesanJasa().getByStatus(true)!!
 
@@ -146,6 +155,7 @@ class KirimPemesananJasaActivity : AppCompatActivity() {
 
     override fun onResume() {
         checkAlamat()
+        buttonPesan()
         super.onResume()
     }
 }

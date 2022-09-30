@@ -14,6 +14,7 @@ class ResponModel {
     var rajaongkir = AlamatModel()
     var transaksi = Transaksi()
     var barang = Barang()
+    var buatBarang = Barang()
 
 
     var provinsi :ArrayList<AlamatModel> = ArrayList()

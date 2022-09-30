@@ -2,7 +2,6 @@ package com.mavendra.golekkostv3.room
 
 import androidx.room.*
 import androidx.room.OnConflictStrategy.REPLACE
-import com.mavendra.golekkostv3.model.AlamatPesanJasa
 import com.mavendra.golekkostv3.model.AlamatPesanKostKontrakan
 
 @Dao
