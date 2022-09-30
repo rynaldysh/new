@@ -58,6 +58,11 @@ interface ApiService {
         @Part image: MultipartBody.Part
     ): Call<ResponModel>
 
+    @GET("barang/history/{id}")
+    fun getCreateBarang(
+        @Path("id") id: Int
+    ): Call<ResponModel>
+
     @GET("province")
     fun getProvinsi(
         @Header("key") key:String
