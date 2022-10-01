@@ -18,15 +18,14 @@ public class Barang implements Serializable {
 
     public int id;
     public String user_id;
-    public String user_name;
     public String name;
     public String nama_pemilik;
     public String harga;
     public String lokasi;
     public String deskripsi;
     public String image;
-    public String created_at;
-    public String updated_at;
+    public String status;
+    public  created_att ;
 
     public  int jumlah = 1;
     public  boolean selected = true;

@@ -113,53 +113,6 @@
                 android:backgroundTint="@color/white"
                 app:cardElevation="3dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="@dimen/_10sdp"
-                    android:paddingVertical="@dimen/_10sdp">
-
-                    <RelativeLayout
-                        android:id="@+id/rlBarang"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginHorizontal="@dimen/_6sdp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                app:srcCompat="@drawable/profile_store" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:text="Jual Barang"
-                                android:textColor="@color/black"
-                                android:textSize="20sp"
-                                android:textStyle="bold" />
-
-                        </LinearLayout>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerInParent="true"
-                            app:srcCompat="@drawable/profile_chevron" />
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -204,24 +157,6 @@
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="25dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="38dp"
-                                android:text="Lini masa belanja anda"
-                                android:textColor="@color/black"
-                                android:textSize="@dimen/_9ssp"
-                                tools:ignore="SmallSp" />
 
                         </LinearLayout>
 

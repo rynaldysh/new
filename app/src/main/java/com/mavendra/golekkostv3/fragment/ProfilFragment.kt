@@ -28,7 +28,6 @@ class ProfilFragment : Fragment() {
     lateinit var rlRiwayat :RelativeLayout
     lateinit var rlRiwayatJasa :RelativeLayout
     lateinit var rlRiwayatKostkontrakan :RelativeLayout
-    lateinit var rlBarang :RelativeLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,9 +60,6 @@ class ProfilFragment : Fragment() {
         rlRiwayatKostkontrakan.setOnClickListener {
             startActivity(Intent(requireActivity(), RiwayatPesanKostkontrakanActivity::class.java))
         }
-        rlBarang.setOnClickListener {
-            startActivity(Intent(requireActivity(), JualBarangActivity::class.java))
-        }
 
     }
 
@@ -76,7 +72,6 @@ class ProfilFragment : Fragment() {
         rlRiwayat = view.findViewById(R.id.rlRiwayat)
         rlRiwayatJasa = view.findViewById(R.id.rlRiwayatJasa)
         rlRiwayatKostkontrakan = view.findViewById(R.id.rlRiwayatKostkontrakan)
-        rlBarang = view.findViewById(R.id.rlBarang)
     }
 
     private fun setData() {

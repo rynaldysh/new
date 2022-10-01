@@ -6,19 +6,27 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.RelativeLayout
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mavendra.golekkostv3.R
+import com.mavendra.golekkostv3.activity.JualBarangActivity
 import com.mavendra.golekkostv3.activity.LoginActivity
+import com.mavendra.golekkostv3.activity.RiwayatJualBarangActivity
 import com.mavendra.golekkostv3.adapter.BarangAdapter
 import com.mavendra.golekkostv3.adapter.JasaAngkutAdapter
 import com.mavendra.golekkostv3.adapter.KostKontrakanAdapter
+import com.mavendra.golekkostv3.adapter.RiwayatJualBarangAdapter
 import com.mavendra.golekkostv3.app.ApiConfig
 import com.mavendra.golekkostv3.helper.SharedPref
 import com.mavendra.golekkostv3.model.Barang
 import com.mavendra.golekkostv3.model.Jasaangkut
 import com.mavendra.golekkostv3.model.Kostkontrakan
 import com.mavendra.golekkostv3.model.ResponModel
+import kotlinx.android.synthetic.main.fragment_profil.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -31,11 +39,13 @@ class BerandaFragment : Fragment() {
     lateinit var rvKostKontrakan: RecyclerView
     lateinit var rvJasaAngkut: RecyclerView
     lateinit var rvBarangJualan: RecyclerView
+    lateinit var ivJualBarangg: ImageView
     lateinit var s :SharedPref
 
     private var listBarang :ArrayList<Barang> = ArrayList()
     private var listKostKontrakan :ArrayList<Kostkontrakan> = ArrayList()
     private var listJasaangkut :ArrayList<Jasaangkut> = ArrayList()
+
 
 
     override fun onCreateView(
@@ -46,18 +56,24 @@ class BerandaFragment : Fragment() {
 
         val view: View = inflater.inflate(R.layout.fragment_beranda, container, false)
 
-        initKostKontrakan(view)
-        initJasaAngkut(view)
-        initBarangJualan(view)
+        init(view)
 
         getKostKontrakan()
         getJasaAngkut()
         getBarang()
 
+        jualBarang()
+
         s = SharedPref(requireActivity())
         prefBeranda()
 
         return view
+    }
+
+    private fun jualBarang(){
+        ivJualBarangg.setOnClickListener {
+            startActivity(Intent(requireActivity(), RiwayatJualBarangActivity::class.java))
+        }
     }
 
     private fun prefBeranda(){
@@ -152,17 +168,10 @@ class BerandaFragment : Fragment() {
 
     }
 
-    fun initBarangJualan(view: View){
+    private fun init(view: View) {
+        ivJualBarangg = view.findViewById(R.id.ivJualBarangg)
         rvBarangJualan = view.findViewById(R.id.rvBarangJualan)
-    }
-
-    fun initKostKontrakan(view: View){
         rvKostKontrakan = view.findViewById(R.id.rvKostKontrakan)
-    }
-
-    fun initJasaAngkut(view: View){
         rvJasaAngkut = view.findViewById(R.id.rvJasaAngkut)
     }
-
-
 }

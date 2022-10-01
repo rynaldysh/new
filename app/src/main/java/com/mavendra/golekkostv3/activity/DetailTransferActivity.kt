@@ -16,7 +16,6 @@ import com.google.gson.Gson
 import com.inyongtisto.myhelper.base.BaseActivity
 import com.inyongtisto.myhelper.extension.showErrorDialog
 import com.inyongtisto.myhelper.extension.showSuccessDialog
-import com.inyongtisto.myhelper.extension.toGone
 import com.inyongtisto.myhelper.extension.toMultipartBody
 import com.mavendra.golekkostv3.R
 import com.mavendra.golekkostv3.adapter.BarangTransaksiAdapter

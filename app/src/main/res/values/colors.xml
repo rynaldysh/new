@@ -21,5 +21,7 @@
     <color name="bayar_transaksi">#2085FF</color>
     <color name="menunggu">#FFB700</color>
     <color name="selesai">#68FF15</color>
+    <color name="tersedia">#68FF15</color>
     <color name="batal">#CA3F3F</color>
+    <color name="habis">#CA3F3F</color>
 </resources>

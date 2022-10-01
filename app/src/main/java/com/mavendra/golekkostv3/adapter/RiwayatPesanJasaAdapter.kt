@@ -10,7 +10,6 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.mavendra.golekkostv3.R
 import com.mavendra.golekkostv3.helper.Helper
-import com.mavendra.golekkostv3.model.Transaksi
 import com.mavendra.golekkostv3.model.PesanJasa
 import kotlin.collections.ArrayList
 

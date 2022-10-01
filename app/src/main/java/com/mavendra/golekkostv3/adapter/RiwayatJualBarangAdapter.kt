@@ -10,26 +10,26 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.mavendra.golekkostv3.R
 import com.mavendra.golekkostv3.helper.Helper
-import com.mavendra.golekkostv3.model.Transaksi
+import com.mavendra.golekkostv3.model.Barang
+import com.mavendra.golekkostv3.model.Barangg
 import kotlin.collections.ArrayList
 
-class RiwayatAdapter(var data:ArrayList<Transaksi>, var listener: Listeners):RecyclerView.Adapter<RiwayatAdapter.Holder>(){
+class RiwayatJualBarangAdapter(var data:ArrayList<Barang>, var listener: Listeners):RecyclerView.Adapter<RiwayatJualBarangAdapter.Holder>(){
 
     class Holder(view: View):RecyclerView.ViewHolder(view){
-        val tvName = view.findViewById<TextView>(R.id.tvNamaRiwayat)
-        val tvHarga = view.findViewById<TextView>(R.id.tvHargaRiwayat)
-        val tvTanggal = view.findViewById<TextView>(R.id.tvTanggalRiwayat)
-        val tvItem = view.findViewById<TextView>(R.id.tvTotalItemRiwayat)
-        val tvStatus = view.findViewById<TextView>(R.id.tvStatusRiwayat)
+        val tvName = view.findViewById<TextView>(R.id.tvNamaRiwayatBarangJual)
+        val tvHarga = view.findViewById<TextView>(R.id.tvHargaRiwayatBarangJual)
+        val tvTanggal = view.findViewById<TextView>(R.id.tvTanggalRiwayatBarangJual)
+        val tvStatus = view.findViewById<TextView>(R.id.tvStatusRiwayatBarangJual)
         /*val tvDetail = view.findViewById<TextView>(R.id.tvDetailRiwayat)*/
-        val layout = view.findViewById<CardView>(R.id.layoutRiwayat)
+        val layout = view.findViewById<CardView>(R.id.layoutRiwayatBarangJual)
 
     }
 
     lateinit var context: Context
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         context = parent.context
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_riwayat, parent, false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_riwayat_jual_barang, parent, false)
         return Holder(view)
     }
 
@@ -43,11 +43,10 @@ class RiwayatAdapter(var data:ArrayList<Transaksi>, var listener: Listeners):Rec
         val a = data[position]
 
         /*val name = a.details[0].barang.name*/
-        val name = a.details[0].barang.name
 
-        holder.tvName.text = name
-        holder.tvHarga.text = Helper().gantiRupiah(a.total_transfer)
-        holder.tvItem.text = a.total_item + " Item"
+        holder.tvName.text = a.name
+        holder.tvHarga.text = Helper().gantiRupiah(a.harga)
+
 
         /*holder.tvDetail.text = a.name*/
         holder.tvStatus.text = a.status
@@ -64,9 +63,9 @@ class RiwayatAdapter(var data:ArrayList<Transaksi>, var listener: Listeners):Rec
         holder.tvTanggal.text = Helper().convertDate(a.created_att, newFormat)
 
         //change color status
-        var color = context.getColor(R.color.menunggu)
-        if (a.status == "SELESAI") color = context.getColor(R.color.selesai)
-        else if (a.status == "BATAL") color = context.getColor(R.color.batal)
+        var color = context.getColor(R.color.tersedia)
+        if (a.status == "TERSEDIA") color = context.getColor(R.color.tersedia)
+        else if (a.status == "HABIS") color = context.getColor(R.color.habis)
 
         holder.tvStatus.setTextColor(color)
 
@@ -76,6 +75,6 @@ class RiwayatAdapter(var data:ArrayList<Transaksi>, var listener: Listeners):Rec
     }
 
     interface  Listeners{
-        fun onClicked(data: Transaksi)
+        fun onClicked(data: Barang)
     }
 }

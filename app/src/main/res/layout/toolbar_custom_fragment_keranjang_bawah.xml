@@ -31,7 +31,7 @@
                 android:background="@drawable/tombol_isian"
                 android:text="bayar"
                 android:textColor="@color/white"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"

@@ -7,7 +7,6 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.mavendra.golekkostv3.R
-import com.mavendra.golekkostv3.adapter.JasaangkutPesanAdapter
 import com.mavendra.golekkostv3.adapter.KostkontrakanPesanAdapter
 import com.mavendra.golekkostv3.app.ApiConfig
 import com.mavendra.golekkostv3.helper.Helper
