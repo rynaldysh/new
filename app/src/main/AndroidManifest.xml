@@ -65,6 +65,7 @@
         <activity android:name=".activity.InputJualBarangActivity" />
         <activity android:name=".activity.UploadFotoBarang2Activity" />
         <activity android:name=".activity.RiwayatJualBarangActivity" />
+        <activity android:name=".activity.DetailJualBarangActivity" />
     </application>
 
 </manifest>

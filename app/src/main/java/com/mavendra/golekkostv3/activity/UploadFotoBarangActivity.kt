@@ -118,9 +118,13 @@ class UploadFotoBarangActivity : BaseActivity() {
                 progress.dismiss()
                 if(response.isSuccessful){
                     if (response.body()!!.success == 1){
+
+                        val jsJualBarang = Gson().toJson(barang, Barang::class.java)
+
+                        val intent = Intent(this@UploadFotoBarangActivity, RiwayatJualBarangActivity::class.java)
+                        intent.putExtra("barangpush", jsJualBarang)
                         showSuccessDialog("Data produk sudah lengkap, terimakasih!"){
                             alertDialog!!.dismiss()
-                            finish()
                         }
 
                     } else {

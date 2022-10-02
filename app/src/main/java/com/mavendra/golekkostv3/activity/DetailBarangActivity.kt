@@ -33,6 +33,7 @@ class DetailBarangActivity : AppCompatActivity() {
         getInfo()
         mainButton()
         checkKeranjang()
+        Helper().setToolbar(this, toolbarKeranjangAtas, barang.name)
 
     }
 
@@ -111,7 +112,7 @@ class DetailBarangActivity : AppCompatActivity() {
             .error(R.drawable.beranda_ex_kostt)
             .into(ivgambarBarang)
 
-        Helper().setToolbar(this, toolbarKeranjangAtas, barang.name)
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

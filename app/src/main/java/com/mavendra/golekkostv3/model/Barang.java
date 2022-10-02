@@ -25,7 +25,8 @@ public class Barang implements Serializable {
     public String deskripsi;
     public String image;
     public String status;
-    public  created_att ;
+    public String kode_input_barang;
+    public String created_att;
 
     public  int jumlah = 1;
     public  boolean selected = true;

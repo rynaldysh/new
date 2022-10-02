@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mavendra.golekkostv3.R
 import com.mavendra.golekkostv3.helper.Helper
 import com.mavendra.golekkostv3.model.Barang
-import com.mavendra.golekkostv3.model.Barangg
 import kotlin.collections.ArrayList
 
 class RiwayatJualBarangAdapter(var data:ArrayList<Barang>, var listener: Listeners):RecyclerView.Adapter<RiwayatJualBarangAdapter.Holder>(){

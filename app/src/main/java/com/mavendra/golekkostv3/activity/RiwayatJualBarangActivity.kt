@@ -66,8 +66,8 @@ class RiwayatJualBarangActivity : AppCompatActivity() {
         rvRiwayatJualBarang.adapter = RiwayatJualBarangAdapter(barangs, object :RiwayatJualBarangAdapter.Listeners{
             override fun onClicked(data: Barang) {
                 val json = Gson().toJson(data, Barang::class.java)
-                val intent = Intent(this@RiwayatJualBarangActivity, JualBarangActivity::class.java)
-                intent.putExtra("jualbarang", json)
+                val intent = Intent(this@RiwayatJualBarangActivity, DetailJualBarangActivity::class.java)
+                intent.putExtra("barangpush", json)
                 startActivity(intent)
 
             }
