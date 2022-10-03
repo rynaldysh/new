@@ -67,6 +67,7 @@ class UploadFotoBarangActivity : BaseActivity() {
     }
 
     var alertDialog : AlertDialog? = null
+
     @SuppressLint("inflateParams")
     private fun dialodUpload(file: File){
 
@@ -74,14 +75,14 @@ class UploadFotoBarangActivity : BaseActivity() {
         val layout = view.inflate(R.layout.view_upload_gambar_barang, null)
 
         val imageView : ImageView = layout.findViewById(R.id.imageBarang)
-        val btUpload : Button = layout.findViewById(R.id.btUploadBarang)
+        val btUplaod : Button = layout.findViewById(R.id.btUploadBarang)
         val btTake : Button = layout.findViewById(R.id.btAmbilGambarBarang)
 
         Picasso.get()
             .load(file)
             .into(imageView)
 
-        btUpload.setOnClickListener {
+        btUplaod.setOnClickListener {
             upload(file)
         }
 
@@ -123,10 +124,12 @@ class UploadFotoBarangActivity : BaseActivity() {
 
                         val intent = Intent(this@UploadFotoBarangActivity, RiwayatJualBarangActivity::class.java)
                         intent.putExtra("barangpush", jsJualBarang)
-                        onBackPressed()
+
                         showSuccessDialog("Data produk sudah lengkap, terimakasih!"){
                             alertDialog!!.dismiss()
+                            onBackPressed()
                         }
+
                     } else {
                         showErrorDialog(response.body()!!.message)
                     }

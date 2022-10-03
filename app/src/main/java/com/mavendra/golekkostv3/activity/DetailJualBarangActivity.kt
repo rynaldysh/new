@@ -127,9 +127,9 @@ class DetailJualBarangActivity : BaseActivity() {
 
         if(barang.status != "TERSEDIA") llBawahJualBarang.visibility = View.GONE
 
-        var color = getColor(R.color.tersedia)
+        var color = getColor(R.color.terjual)
         if (barang.status == "TERSEDIA") color = getColor(R.color.tersedia)
-        else if (barang.status == "HABIS") color = getColor(R.color.habis)
+        else if (barang.status == "TERJUAL") color = getColor(R.color.terjual)
 
         tvStatusDetailJualBarang.setTextColor(color)
     }

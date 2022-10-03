@@ -20,11 +20,11 @@
             android:id="@+id/btUploadBarang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:background="@drawable/tombol_bulat_white"
             android:text="Unggah"
-            android:textStyle="bold"
             android:textColor="@color/primary_color"
-            android:layout_marginBottom="@dimen/_5sdp"/>
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

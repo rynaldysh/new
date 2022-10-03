@@ -28,7 +28,7 @@ class RiwayatJualBarangActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_riwayat_jual_barang)
 
-        Helper().setToolbar(this, toolbarBiasa, "Riwayat Barang di Jual")
+        Helper().setToolbar(this, toolbarBiasa, "Riwayat Barang Anda")
 
         mainButton()
 

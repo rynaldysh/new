@@ -1,6 +1,7 @@
 package com.mavendra.golekkostv3.adapter
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -27,12 +28,15 @@ class BarangAdapter(var activity: Activity, var data:ArrayList<Barang>):Recycler
         val tvHarga = view.findViewById<TextView>(R.id.tvHargaBarang)
         val tvLokasi = view.findViewById<TextView>(R.id.tvLokasiBarang)
         val ivBarang = view.findViewById<ImageView>(R.id.ivBarang)
+        val tvStatus = view.findViewById<TextView>(R.id.tvStatusBarang)
         val layout = view.findViewById<CardView>(R.id.layoutBarang)
 
 
     }
 
+    lateinit var context: Context
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+        context = parent.context
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_barang, parent, false)
         return Holder(view)
     }
@@ -46,6 +50,14 @@ class BarangAdapter(var activity: Activity, var data:ArrayList<Barang>):Recycler
         holder.tvName.text = data[position].name
         holder.tvHarga.text = NumberFormat.getCurrencyInstance(Locale("in", "ID")).format(Integer.valueOf(data[position].harga))
         holder.tvLokasi.text = data[position].lokasi
+        holder.tvStatus.text = data[position].status
+
+        var color = context.getColor(R.color.menunggu)
+        if (data[position].status == "TERSEDIA") color = context.getColor(R.color.tersedia)
+        else if (data[position].status == "TERJUAL") color = context.getColor(R.color.terjual)
+
+        holder.tvStatus.setBackgroundColor(color)
+
         val image =  Constants.barang_url + data[position].image
         Picasso.get()
             .load(image)

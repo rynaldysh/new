@@ -31,6 +31,7 @@ class Helper {
     fun setToolbarSecond(activity: Activity, toolbarr: Toolbar, title: String) {
         (activity as AppCompatActivity).setSupportActionBar(toolbarr)
         activity.supportActionBar!!.title = title
+        activity.supportActionBar!!.setDisplayShowHomeEnabled(true)
     }
 
     fun convertDate(date: String, newFormat: String, oldFormat: String = "yyyy-MM-dd kk:mm:ss") :String{
