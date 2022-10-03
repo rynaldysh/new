@@ -87,6 +87,7 @@ class JualBarangActivity : BaseActivity() {
 
                     startActivity(intent)
                     Toast.makeText(this@JualBarangActivity, "Berhasil memesan jasa ", Toast.LENGTH_SHORT).show()
+                    onBackPressed()
 
 
                 } else {

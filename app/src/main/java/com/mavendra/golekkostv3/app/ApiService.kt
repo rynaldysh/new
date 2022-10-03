@@ -63,6 +63,11 @@ interface ApiService {
         @Path("id") id: Int
     ): Call<ResponModel>
 
+    @POST("/barang/terjual/{id}")
+    fun terjualBarang(
+        @Path("id") id: Int
+    ): Call<ResponModel>
+
     @GET("province")
     fun getProvinsi(
         @Header("key") key:String

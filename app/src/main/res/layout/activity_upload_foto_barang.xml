@@ -21,6 +21,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_alignParentBottom="true">
 
             <Button
@@ -29,9 +30,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/tombol_bulat"
-                android:text="Upload Foto Untuk Melengkapi Data"
+                android:text="Unggah"
                 android:textColor="@color/white"
                 android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*unggah foto untuk melengkapi informasi barang yang dijual"
+                android:textColor="@color/red"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:textAlignment="center"/>
 
         </LinearLayout>
 

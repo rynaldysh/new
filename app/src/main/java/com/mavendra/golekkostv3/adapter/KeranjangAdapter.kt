@@ -11,6 +11,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.mavendra.golekkostv3.R
 import com.mavendra.golekkostv3.app.Constants.KOSTKONTRAKAN_URL
+import com.mavendra.golekkostv3.app.Constants.barang_url
 import com.mavendra.golekkostv3.helper.Helper
 import com.mavendra.golekkostv3.model.Barang
 import com.mavendra.golekkostv3.room.MyDatabase
@@ -66,7 +67,7 @@ class KeranjangAdapter(var activity: Activity, var data:ArrayList<Barang>, var l
 
         var jumlah = barang.jumlah
         holder.tvJumlah.text = jumlah.toString()
-        val image =  KOSTKONTRAKAN_URL + barang.image
+        val image =  barang_url + barang.image
         Picasso.get()
             .load(image)
             .placeholder(R.drawable.beranda_ex_kostt)

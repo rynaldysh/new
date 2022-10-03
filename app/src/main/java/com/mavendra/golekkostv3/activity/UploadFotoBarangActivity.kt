@@ -42,7 +42,7 @@ class UploadFotoBarangActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upload_foto_barang)
 
-        Helper().setToolbar(this, toolbarBiasa, "Riwayat Belanja")
+        Helper().setToolbarSecond(this, toolbarBiasa, "Upload Foto Barang")
 
         val json = intent.getStringExtra("barangpush")
         barang = Gson().fromJson(json, Barang::class.java)
@@ -123,10 +123,10 @@ class UploadFotoBarangActivity : BaseActivity() {
 
                         val intent = Intent(this@UploadFotoBarangActivity, RiwayatJualBarangActivity::class.java)
                         intent.putExtra("barangpush", jsJualBarang)
+                        onBackPressed()
                         showSuccessDialog("Data produk sudah lengkap, terimakasih!"){
                             alertDialog!!.dismiss()
                         }
-
                     } else {
                         showErrorDialog(response.body()!!.message)
                     }

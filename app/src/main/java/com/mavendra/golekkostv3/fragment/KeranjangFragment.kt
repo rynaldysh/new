@@ -22,6 +22,7 @@ import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.toolbar_custom_fragment_keranjang_bawah.*
 
 /**
  * A simple [Fragment] subclass.
@@ -106,7 +107,7 @@ class KeranjangFragment : Fragment() {
             delete(listDelete)
         }
 
-        btBayar.setOnClickListener {
+        btBayarKeranjang.setOnClickListener {
 
             if (s.getStatusLogin()){
 
@@ -156,14 +157,14 @@ class KeranjangFragment : Fragment() {
     lateinit var ivDeleteKeranjang: ImageView
     lateinit var rvBarangJualan: RecyclerView
     lateinit var tvTotalHarga: TextView
-    lateinit var btBayar: Button
+    lateinit var btBayarKeranjang: Button
     lateinit var cbAll: CheckBox
 
     private fun init(view: View) {
         ivDeleteKeranjang = view.findViewById(R.id.ivDeleteKeranjang)
         rvBarangJualan = view.findViewById(R.id.rvKostKontrakan)
         tvTotalHarga = view.findViewById(R.id.tvTotalHarga)
-        btBayar = view.findViewById(R.id.btBayar)
+        btBayarKeranjang = view.findViewById(R.id.btBayarKeranjang)
         cbAll = view.findViewById(R.id.cbAll)
     }
 

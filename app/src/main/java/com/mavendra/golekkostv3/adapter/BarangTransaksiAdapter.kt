@@ -46,7 +46,7 @@ class BarangTransaksiAdapter(var data:ArrayList<DetailTransaksi>):RecyclerView.A
         val b = a.barang
 
         holder.tvName.text = name
-        holder.tvHarga.text = Helper().gantiRupiah(b.harga)
+        /*holder.tvHarga.text = Helper().gantiRupiah(a.barang.harga)*/
         holder.tvHargaTotal.text = Helper().gantiRupiah(a.total_harga)
         holder.tvItem.text = a.total_item.toString() + " Item"
 

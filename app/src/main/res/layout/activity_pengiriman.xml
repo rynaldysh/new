@@ -206,7 +206,8 @@
                             android:layout_height="@dimen/_31sdp"
                             android:layout_marginTop="@dimen/_5sdp"
                             android:layout_marginBottom="@dimen/_5sdp"
-                            android:textSize="@dimen/_14ssp" />
+                            android:textSize="@dimen/_14ssp"
+                            android:visibility="gone"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -434,7 +435,7 @@
                             android:textColor="@color/white"
                             android:textAllCaps="true"
                             android:background="@drawable/tombol_bulat"
-                            android:visibility="visible"/>
+                            android:visibility="gone"/>
 
                     </LinearLayout>
 

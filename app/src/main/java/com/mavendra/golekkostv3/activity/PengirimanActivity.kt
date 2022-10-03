@@ -37,6 +37,7 @@ class PengirimanActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pengiriman)
+
         myDb = MyDatabase.getInstance(this)!!
         Helper().setToolbar(this, toolbarBiasa, "Detail Transaksi")
 
@@ -79,6 +80,9 @@ class PengirimanActivity : AppCompatActivity() {
             tvKosong.visibility = View.GONE
             llMetodePengiriman.visibility = View.VISIBLE
 
+            btBayar.visibility = View.VISIBLE
+            spnKurir.visibility = View.VISIBLE
+
             val a = myDb.daoAlamat().getByStatus(true)!!
             tvNamaAlamat.text = a.name
             tvPhoneAlamat.text = a.phone
@@ -91,6 +95,8 @@ class PengirimanActivity : AppCompatActivity() {
         } else {
             cvAlamat.visibility = View.GONE
             tvKosong.visibility = View.VISIBLE
+            btBayar.visibility = View.GONE
+            spnKurir.visibility = View.GONE
             btTambahAlamat.text = "Tambah Alamat"
         }
     }
@@ -101,6 +107,7 @@ class PengirimanActivity : AppCompatActivity() {
         }
         btBayar.setOnClickListener {
             bayar()
+
         }
     }
 

@@ -61,11 +61,11 @@ class DetailJualBarangActivity : BaseActivity() {
         btTerjualDetailJualBarang.setOnClickListener {
             SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
                 .setTitleText("Apakah anda yakin?")
-                .setContentText("Transaksi akan dibatalkan dan tidak bisa dikembalikan!")
-                .setConfirmText("Ya, batalkan!")
+                .setContentText("Barang anda sudah terjual? tidak dapat di ubah seperti sebelumnya!")
+                .setConfirmText("Ya, Terjual!")
                 .setConfirmClickListener {
                         it.dismissWithAnimation()
-                        batalCheckout()
+                        barangTerjual()
                 }
                 .setCancelText("Tutup")
                 .setCancelClickListener {
@@ -74,10 +74,10 @@ class DetailJualBarangActivity : BaseActivity() {
         }
     }
 
-    fun batalCheckout(){
+    fun barangTerjual(){
         val loading = SweetAlertDialog(this@DetailJualBarangActivity, SweetAlertDialog.PROGRESS_TYPE)
         loading.setTitleText("Memuat...").show()
-        ApiConfig.instanceRetrofit.batalCheckout(barang.id).enqueue(object :
+        ApiConfig.instanceRetrofit.terjualBarang(barang.id).enqueue(object :
             Callback<ResponModel> {
             override fun onFailure(call: Call<ResponModel>, t: Throwable) {
                 loading.dismiss()
@@ -91,7 +91,7 @@ class DetailJualBarangActivity : BaseActivity() {
 
                     SweetAlertDialog(this@DetailJualBarangActivity, SweetAlertDialog.SUCCESS_TYPE)
                         .setTitleText("Berhasil")
-                        .setContentText("Transaksi berhasil dibatalkan")
+                        .setContentText("Barang anda sudah terjual")
                         .setConfirmClickListener {
                             it.dismissWithAnimation()
                             onBackPressed()
@@ -119,13 +119,13 @@ class DetailJualBarangActivity : BaseActivity() {
     fun setData(barang: Barang) {
 
         val newFormat = "dd MMMM yyyy, kk:mm:ss"
-        /*tvTanggalDetailJualBarang.text = Helper().convertDate(barang.created_att, newFormat)*/
+        tvTanggalDetailJualBarang.text = Helper().convertDate(barang.created_att, newFormat)
         /*tvTanggalDetailTransfer.text = transaksi.created_att*/
 
         tvStatusDetailJualBarang.text = barang.status
 
 
-        if(barang.status != "MENUNGGU") llBawahJualBarang.visibility = View.GONE
+        if(barang.status != "TERSEDIA") llBawahJualBarang.visibility = View.GONE
 
         var color = getColor(R.color.tersedia)
         if (barang.status == "TERSEDIA") color = getColor(R.color.tersedia)

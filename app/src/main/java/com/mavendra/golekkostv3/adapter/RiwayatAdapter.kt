@@ -43,9 +43,9 @@ class RiwayatAdapter(var data:ArrayList<Transaksi>, var listener: Listeners):Rec
         val a = data[position]
 
         /*val name = a.details[0].barang.name*/
-        val name = a.details[0].barang.name
+        /*val name = a.details[0].barang.name*/
 
-        holder.tvName.text = name
+        holder.tvName.text = a.name
         holder.tvHarga.text = Helper().gantiRupiah(a.total_transfer)
         holder.tvItem.text = a.total_item + " Item"
 
